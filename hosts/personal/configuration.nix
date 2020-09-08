@@ -98,6 +98,7 @@
         signal-desktop
         sshfs
         vscode
+        vlc
         yarn
         youtube-dl
     ];
