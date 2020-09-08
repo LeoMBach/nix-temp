@@ -107,6 +107,7 @@
         rclone
         remmina
         scrcpy
+        shellcheck
         signal-desktop
         sshfs
         vscode
