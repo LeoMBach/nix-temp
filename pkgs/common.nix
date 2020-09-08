@@ -7,10 +7,23 @@
         ./vim.nix
     ];
 
-    environment.systemPackages = with pkgs; [
+    programs.vim.defaultEditor = true;
+
+    environment = {
+      shellAliases = {
+        ll = "ls -l";
+        lla = "ls -la";
+        llha = "ls -lha";
+
+        grep = "grep --color";
+
+        dir = "ls -l";
+        cls = "clear";
+      };
+
+      systemPackages = with pkgs; [
         # Basic tools
         aria2
-        bash-completion
         coreutils
         cron
         curl
@@ -44,4 +57,5 @@
 
         home-manager
     ];
+  };
 }
