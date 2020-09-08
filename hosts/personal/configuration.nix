@@ -69,21 +69,6 @@
         # Suspend to ram doesn't work on the Yoga Slim 7 without some finangling.
         # This is a simple workaround.
         logind.lidSwitch = "lock";
-
- #       borgbackup.jobs = {
- #           exampleBackup = {
- #               paths = "/";
- #               exclude = [];
- #               repo = "";
- #               encryption = {
- #                   mode = "";
- #                   passphrase = "";
- #               };
- #               compression = "auto,lzma";
- #               startAt = "weekly";
- #           };
- #       };
-
     };
 
     nixpkgs.config.allowUnfree = true;
