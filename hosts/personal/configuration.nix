@@ -86,6 +86,8 @@
         joplin-desktop
         lazygit
         mediainfo
+        nodejs-13_x
+        nodePackages.npm
         poetry
         postman
         qemu
@@ -97,12 +99,12 @@
         sshfs
         vscode
         yarn
+        youtube-dl
     ];
 
     programs = {
         adb.enable = true;
         java.enable = true;
-        npm.enable = true;
         ssh.startAgent = true;
         usbtop.enable = true;
     };
