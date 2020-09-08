@@ -73,6 +73,8 @@
 
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
+        ansible
+        ansible-lint
         bitwarden
         chromium
         dbeaver
