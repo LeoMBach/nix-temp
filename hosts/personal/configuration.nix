@@ -101,6 +101,7 @@
         sshfs
         vscode
         vlc
+        wireshark
         yarn
         youtube-dl
     ];
