@@ -34,6 +34,7 @@
         input-utils
         less
         mkpasswd
+        nmap
         p7zip
         pigz
         pixz
