@@ -110,6 +110,12 @@
         java.enable = true;
         ssh.startAgent = true;
         usbtop.enable = true;
+
+        ssh.extraConfig = ''
+          Host router
+            HostName gl-ar750s
+            User root
+        '';
     };
 
     fonts.fonts = [
