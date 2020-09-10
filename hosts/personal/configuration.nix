@@ -88,8 +88,8 @@
         joplin-desktop
         lazygit
         mediainfo
-        nodejs-13_x
         nodePackages.npm
+        nodejs-13_x
         poetry
         postman
         qemu
@@ -99,8 +99,8 @@
         shellcheck
         signal-desktop
         sshfs
-        vscode
         vlc
+        vscode
         wireshark
         yarn
         youtube-dl
@@ -109,14 +109,21 @@
     programs = {
         adb.enable = true;
         java.enable = true;
-        ssh.startAgent = true;
         usbtop.enable = true;
 
-        ssh.extraConfig = ''
-          Host router
-            HostName gl-ar750s
-            User root
-        '';
+        gnupg.agent = {
+          enable = true;
+          pinentryFlavor = "curses";
+        };
+
+        ssh = {
+          startAgent = true;
+          extraConfig = ''
+            Host router
+              HostName gl-ar750s
+              User root
+          '';
+        };
     };
 
     fonts.fonts = [

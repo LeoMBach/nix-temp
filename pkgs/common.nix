@@ -26,6 +26,7 @@
         aria2
         coreutils
         cron
+        cryptsetup
         curl
         file
         fzf
@@ -47,10 +48,6 @@
         usbutils
         wget
         zip
-
-        # Encryption
-        cryptsetup
-        gnupg
 
         # Fonts
         hack-font
