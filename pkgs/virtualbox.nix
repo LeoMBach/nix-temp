@@ -4,8 +4,10 @@
 # So, it has it's own little nix file.
 
 {
-    environment.systemPackages = with pkgs; [
-        virtualbox
-        virtualboxWithExtpack
-    ];
+    nixpkgs.config.allowUnfree = true;
+    virtualisation.virtualbox.host = {
+        enable = true;
+        enableExtensionPack = true;
+    };
+    users.extraGroups.vboxusers.members = [ "leo" ];
 }
