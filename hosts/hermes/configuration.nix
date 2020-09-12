@@ -2,12 +2,14 @@
 
 {
     imports = [
-        ./hardware-configuration.nix
-        ./grub-efi.nix
-        ./user.nix
-        ./pkgs/common.nix
-        ./pkgs/plasma5.nix
-        ./pkgs/virtualbox.nix
+        ../../../hardware-configuration.nix
+        ../../grub-efi.nix
+        ../../user.nix
+        ../../nix
+        ../../pkgs
+        ../../pkgs/plasma5.nix
+        ../../virtualisation/docker.nix
+        ../../virtualisation/virtualbox.nix
     ];
 
     boot = {
@@ -153,11 +155,6 @@
         noto-fonts-emoji
         source-code-pro
     ];
-
-    virtualisation.docker = {
-        enable = true;
-        enableOnBoot = true;
-    };
 
     system.stateVersion = "20.03";
 }

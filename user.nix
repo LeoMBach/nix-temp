@@ -9,7 +9,7 @@
             home = "/home/leo";
             isNormalUser = true;
             initialPassword = "letmein";
-            extraGroups = [ "adbusers" "disk" "docker" "networkmanager" "plugdev" "wheel" ];
+            extraGroups = [ "adbusers" "disk" "networkmanager" "plugdev" "wheel" ];
         };
     };
 }
