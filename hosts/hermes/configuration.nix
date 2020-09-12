@@ -48,12 +48,16 @@
     };
 
     hardware = {
-        bluetooth.enable = true;
+        bluetooth = {
+            enable = true;
+            powerOnBoot = false;
+        };
         cpu.amd.updateMicrocode = true;
         enableRedistributableFirmware = true;
         pulseaudio = {
             enable = true;
             package = pkgs.pulseaudioFull;
+            extraModules = [ pkgs.pulseaudio-modules-bt ];
         };
     };
 
@@ -92,6 +96,13 @@
 
         xserver.videoDrivers = [ "amdgpu" ];
     };
+
+    # Disable the sap plugin, just to get rid of two lines of error text on each bluetoothd restart.
+    # First entry is a blank string, otherwise systemd complains of multiple ExecStart entries.
+    systemd.services.bluetooth.serviceConfig.ExecStart = [
+        ""
+        "/run/current-system/sw/bin/bluetoothd --noplugin=sap"
+    ];
 
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
