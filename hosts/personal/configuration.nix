@@ -12,12 +12,20 @@
 
     boot = {
         kernelPackages = pkgs.linuxPackages_5_7;
-
-        kernelModules = [ "acpi_call" ];
-        extraModulePackages = with config.boot.kernelPackages; [ acpi_call ];
+        kernelModules = [
+          "acpi_call"
+          "kvm-amd"
+        ];
 
         # Fixes backlight save/load systemd service
-        kernelParams = [ "acpi_backlight=native" ];
+        kernelParams = [
+          "acpi_backlight=native"
+          "acpi_enforce_resources=lax"
+        ];
+
+        extraModulePackages = with config.boot.kernelPackages; [
+          acpi_call
+        ];
 
         loader.grub.enableCryptodisk = true;
 
