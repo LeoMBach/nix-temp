@@ -47,6 +47,7 @@
 
     networking = {
         hostName = "hermes";
+        nameservers = [ "1.1.1.1" "1.0.0.1" ];
         networkmanager.enable = true;
         interfaces.wlp1s0.useDHCP = true;
     };
