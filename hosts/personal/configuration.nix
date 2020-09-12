@@ -39,10 +39,12 @@
 
     hardware = {
         bluetooth.enable = true;
+        cpu.amd.updateMicrocode = true;
+        enableRedistributableFirmware = true;
         pulseaudio = {
-                enable = true;
-                package = pkgs.pulseaudioFull;
-            };
+            enable = true;
+            package = pkgs.pulseaudioFull;
+        };
     };
 
     networking = {
@@ -77,6 +79,8 @@
         # Suspend to ram doesn't work on the Yoga Slim 7 without some finangling.
         # This is a simple workaround.
         logind.lidSwitch = "lock";
+
+        xserver.videoDrivers = [ "amdgpu" ];
     };
 
     nixpkgs.config.allowUnfree = true;
