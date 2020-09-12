@@ -34,9 +34,11 @@
         htop
         input-utils
         less
+        lsof
         mkpasswd
         nmap
         p7zip
+        pciutils
         pigz
         pixz
         python38
