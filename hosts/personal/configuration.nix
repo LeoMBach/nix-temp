@@ -126,9 +126,12 @@
         };
     };
 
-    fonts.fonts = [
-        pkgs.hack-font
-        pkgs.source-code-pro
+    fonts.fonts = with pkgs; [
+        hack-font
+        noto-fonts
+        noto-fonts-cjk
+        noto-fonts-emoji
+        source-code-pro
     ];
 
     virtualisation.docker = {

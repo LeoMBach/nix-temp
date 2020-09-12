@@ -51,10 +51,6 @@
         wget
         zip
 
-        # Fonts
-        hack-font
-        source-code-pro
-
         home-manager
     ];
   };
