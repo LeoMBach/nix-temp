@@ -10,6 +10,7 @@
         ../../pkgs/plasma5.nix
         ../../virtualisation/docker.nix
         ../../virtualisation/virtualbox.nix
+        ../../modules/rclone-mount.nix
     ];
 
     boot = {
@@ -103,6 +104,11 @@
         ""
         "/run/current-system/sw/bin/bluetoothd --noplugin=sap"
     ];
+
+    services.rclone-mount = {
+      configPath = "/home/leo/.config/rclone/rclone.conf";
+      remoteName = "dropbox:";
+    };
 
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
