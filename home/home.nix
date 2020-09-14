@@ -1,6 +1,8 @@
 {
     imports = [
         ./git.nix
-        ./vim.nix
+
+        # Ignored in favor of system-wide config
+        # ./vim.nix
     ];
 }
