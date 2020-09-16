@@ -13,6 +13,7 @@
         ../../modules/rclone-mount.nix
     ];
 
+
     boot = {
         kernelPackages = pkgs.linuxPackages_5_7;
         kernelModules = [
@@ -81,7 +82,18 @@
     security.sudo.wheelNeedsPassword = false;
 
     services = {
+        # Suspend to ram doesn't work on the Yoga Slim 7 without some finangling.
+        # This is a simple workaround.
+        logind.lidSwitch = "lock";
+
         openssh.enable = true;
+
+        rclone-mount.mounts.dropbox = {
+          configPath = "/home/leo/.config/rclone/rclone.conf";
+          remote = "dropbox:";
+          mountPath = "/mnt/dropbox";
+        };
+
         tlp = {
             enable = true;
             extraConfig = ''
@@ -91,9 +103,6 @@
             '';
         };
 
-        # Suspend to ram doesn't work on the Yoga Slim 7 without some finangling.
-        # This is a simple workaround.
-        logind.lidSwitch = "lock";
 
         xserver.videoDrivers = [ "amdgpu" ];
     };
@@ -105,11 +114,6 @@
         "/run/current-system/sw/bin/bluetoothd --noplugin=sap"
     ];
 
-    services.rclone-mount = {
-      configPath = "/home/leo/.config/rclone/rclone.conf";
-      remoteName = "dropbox:";
-    };
-
     nixpkgs.config.allowUnfree = true;
     environment.systemPackages = with pkgs; [
         ansible
@@ -118,7 +122,6 @@
         chromium
         dbeaver
         dive
-        dropbox
         ffmpeg
         firefox
         freerdp
