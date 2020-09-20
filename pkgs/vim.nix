@@ -66,6 +66,11 @@
           set noerrorbells
           set novisualbell
 
+          " Auto-close Vim if NERDTree is the last open buffer
+          autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+          map <C-b> :NERDTreeToggle<CR>
+
           autocmd vimenter * colorscheme gruvbox
           set background=dark
         '';
