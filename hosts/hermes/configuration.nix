@@ -158,11 +158,7 @@
 
     ssh = {
       startAgent = true;
-      extraConfig = ''
-        Host router
-          HostName gl-ar750s
-          User root
-      '';
+      extraConfig = builtins.readFile ../../secrets/hermes/ssh-config;
     };
   };
 
