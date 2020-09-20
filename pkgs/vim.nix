@@ -8,6 +8,7 @@
             ((vim_configurable.override { python = python3; }).customize {
               name = "vim";
               vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
+                  gruvbox
                   nerdtree
                   nerdtree-git-plugin
                   syntastic
@@ -62,6 +63,9 @@
 
                   set noerrorbells
                   set novisualbell
+
+                  autocmd vimenter * colorscheme gruvbox
+                  set background=dark
               '';
             })
         ];
