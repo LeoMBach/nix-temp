@@ -89,7 +89,7 @@
 
     rclone-mount.mounts.dropbox = {
       configPath = "/home/leo/.config/rclone/rclone.conf";
-      remote = "dropbox:";
+      remote = "dropbox_cache:";
       mountPath = "/mnt/dropbox";
     };
 
