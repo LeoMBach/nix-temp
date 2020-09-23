@@ -10,6 +10,7 @@
     ../../pkgs/plasma5.nix
     ../../virtualisation/docker.nix
     ../../virtualisation/virtualbox.nix
+    ../../modules/vscode-liveshare.nix
     ../../modules/rclone-mount.nix
   ];
 
