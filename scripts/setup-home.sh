@@ -5,5 +5,5 @@ mkdir -p ~/.config/nixpkgs
 echo ""
 
 echo "Linking home config files..."
-ln -vsf $(readlink -f ./home/*) ~/.config/nixpkgs/
+ln -vsf "$(readlink -f ./home/*)" ~/.config/nixpkgs/
 echo ""
