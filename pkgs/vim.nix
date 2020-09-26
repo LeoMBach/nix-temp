@@ -27,8 +27,7 @@
         vimrcConfig.customRC = ''
           set encoding=utf-8
 
-          " Fuzzy finding
-          set path +=**
+          let mapleader = ","
 
           set number
           set numberwidth=2
@@ -88,8 +87,12 @@
             inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
           endif
 
-          " CTRL+P file finding, like in VSCode
-          nnoremap <C-p> :FZF<CR>
+          " Project-wide file search
+          nnoremap <Leader>p :FZF<CR>
+
+          " Project-wide ripgrep search
+          nnoremap <Leader>f :Rg<CR>
+
           filetype plugin on
           filetype indent on
 
