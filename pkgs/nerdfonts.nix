@@ -17,6 +17,7 @@ in
         "DroidSansMono"
         "FiraCode"
         "Hack"
+        "Meslo"
         "SourceCodePro"
       ];
     })

@@ -6,6 +6,7 @@
     ./screen.nix
     ./tmux.nix
     ./vim.nix
+    ./zsh.nix
   ];
 
   programs.vim.defaultEditor = true;

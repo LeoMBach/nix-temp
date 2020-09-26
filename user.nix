@@ -5,7 +5,7 @@
     mutableUsers = true;
     users.leo = {
       uid = 1000;
-      shell = pkgs.bash;
+      shell = pkgs.zsh;
       home = "/home/leo";
       isNormalUser = true;
       initialPassword = "letmein";
