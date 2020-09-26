@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./nerdfonts.nix
     ./screen.nix
     ./tmux.nix
     ./vim.nix

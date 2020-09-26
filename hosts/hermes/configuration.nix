@@ -128,6 +128,7 @@
     handbrake
     joplin-desktop
     lazygit
+    libvirt
     mediainfo
     nodePackages.npm
     nodejs-13_x
@@ -162,14 +163,6 @@
       extraConfig = builtins.readFile ../../secrets/hermes/ssh-config;
     };
   };
-
-  fonts.fonts = with pkgs; [
-    hack-font
-    noto-fonts
-    noto-fonts-cjk
-    noto-fonts-emoji
-    source-code-pro
-  ];
 
   system.stateVersion = "20.03";
 }
