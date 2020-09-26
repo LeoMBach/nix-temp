@@ -115,6 +115,7 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    acpi
     ansible
     ansible-lint
     bitwarden
