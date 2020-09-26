@@ -9,19 +9,23 @@
         name = "vim";
         
         vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
+          coc-nvim
+          fzf-vim
+          fzfWrapper
           gruvbox
           nerdtree
           nerdtree-git-plugin
           syntastic
           vim-airline
           vim-commentary
+          vim-devicons
           vim-fugitive
           vim-gitgutter
           vim-surround
         ];
         
         vimrcConfig.customRC = ''
-          set encoding=utf8
+          set encoding=utf-8
 
           " Fuzzy finding
           set path +=**
@@ -51,13 +55,41 @@
           set expandtab
 
           " Default to 2-space tabs for certain filetypes
-          autocmd FileType html       :setlocal sw=2 ts=2 sts=2
-          autocmd FileType javascript :setlocal sw=2 ts=2 sts=2
-          autocmd FileType yaml       :setlocal sw=2 ts=2 sts=2
+          autocmd FileType html             :setlocal sw=2 ts=2 sts=2
+          autocmd FileType javascript       :setlocal sw=2 ts=2 sts=2
+          autocmd FileType typescriptreact  :setlocal sw=2 ts=2 sts=2
+          autocmd FileType yaml             :setlocal sw=2 ts=2 sts=2
 
           " Make backspace sane
           set backspace=eol,start,indent
 
+          " Reduces delays with coc
+          set updatetime=300
+
+          " Always show signcolumn so that text doesn't shift when diagnostics are shown
+          set signcolumn=yes
+
+          " Coc tab completion
+          inoremap <silent><expr> <TAB> 
+            \ pumvisible() ? "\<C-n>" :
+            \ <SID>check_back_space() ? "\<TAB>" :
+            \ coc#refresh()
+          inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+          function! s:check_back_space() abort
+            let col = col('.') - 1
+            return !col || getline('.')[col - 1] =~# '\s'
+          endfunction
+
+          " Use <cr> to confirm Coc completion
+          if has ("*complete_info")
+            inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+          else
+            inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+          endif
+
+          " CTRL+P file finding, like in VSCode
+          nnoremap <C-p> :FZF<CR>
           filetype plugin on
           filetype indent on
 
