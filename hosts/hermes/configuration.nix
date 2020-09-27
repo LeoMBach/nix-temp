@@ -3,8 +3,9 @@
 {
   imports = [
     ../../../hardware-configuration.nix
-    ../../grub-efi.nix
-    ../../user.nix
+    ../../common/grub-efi.nix
+    ../../common/user.nix
+    ../../common/laptop.nix
     ../../nix
     ../../pkgs
     ../../pkgs/plasma5.nix
@@ -54,13 +55,14 @@
       enable = true;
       powerOnBoot = false;
     };
-    cpu.amd.updateMicrocode = true;
-    enableRedistributableFirmware = true;
     pulseaudio = {
       enable = true;
       package = pkgs.pulseaudioFull;
       extraModules = [ pkgs.pulseaudio-modules-bt ];
     };
+
+    cpu.amd.updateMicrocode = true;
+    enableRedistributableFirmware = true;
   };
 
   networking = {
@@ -92,15 +94,6 @@
       configPath = "/home/leo/.config/rclone/rclone.conf";
       remote = "dropbox_cache:";
       mountPath = "/mnt/dropbox";
-    };
-
-    tlp = {
-      enable = true;
-      extraConfig = ''
-        TLP_DEFAULT_MODE=BAT
-        CPU_SCALING_GOVERNOR_ON_AC=ondemand
-        CPU_SCALING_GOVERNOR_ON_BAT=powersave
-      '';
     };
 
     xserver.videoDrivers = [ "amdgpu" ];
