@@ -3,7 +3,7 @@
 {
   imports = [
     #../../../hardware-configuration.nix
-    ../../grub-efi.nix
+    ../../common/grub-efi.nix
     ../../nix
     ../../pkgs
     ../../virtualisation/docker.nix
