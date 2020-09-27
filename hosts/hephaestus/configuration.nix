@@ -22,14 +22,17 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  users.users = {
-    hephaestus = {
-      uid = 1000;
-      shell = pkgs.bash;
-      home = "/home/hephaestus";
-      isNormalUser = true;
-      initialPassword = "letmein";
-      extraGroups = [ "docker" "wheel" ];
+  users = {
+    mutableUsers = true;
+    users = {
+      hephaestus = {
+        uid = 1000;
+        shell = pkgs.zsh;
+        home = "/home/hephaestus";
+        isNormalUser = true;
+        initialPassword = "letmein";
+        extraGroups = [ "docker" "wheel" ];
+      };
     };
   };
 }
