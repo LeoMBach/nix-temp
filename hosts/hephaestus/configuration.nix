@@ -3,13 +3,16 @@
 {
   imports = [
     #../../../hardware-configuration.nix
-    ../../common/grub-efi.nix
-    ../../nix
-    ../../pkgs
-    ../../virtualisation/docker.nix
+
     ./docker-networks.nix
     ./docker-services
+    ../../common/grub-efi.nix
     ../../modules/rclone-mount.nix
+    ../../nix
+    ../../pkgs/vim.nix
+    ../../pkgs/screen.nix
+    ../../pkgs/tmux.nix
+    ../../virtualisation/docker.nix
   ];
 
   services = {
