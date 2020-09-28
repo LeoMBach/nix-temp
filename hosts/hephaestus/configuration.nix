@@ -2,11 +2,10 @@
 
 {
   imports = [
-    #../../../hardware-configuration.nix
+    ../../../hardware-configuration.nix
 
     ./docker-networks.nix
     ./docker-services
-    ../../common/grub-efi.nix
     ../../modules/rclone-mount.nix
     ../../nix
     ../../pkgs/vim.nix
@@ -14,6 +13,12 @@
     ../../pkgs/tmux.nix
     ../../virtualisation/docker.nix
   ];
+
+  boot.loader.grub = {
+    enable = true;
+    version = 2;
+    device = "/dev/sda";
+  };
 
   services = {
     traefik = {
