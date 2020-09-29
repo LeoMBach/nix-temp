@@ -20,14 +20,6 @@
     device = "/dev/sda";
   };
 
-  services = {
-    traefik = {
-      enable = true;
-      group = "docker";
-      dataDir = "/opt/hephaestus/traefik";
-    };
-  };
-
   security.sudo.wheelNeedsPassword = false;
 
   users = {
