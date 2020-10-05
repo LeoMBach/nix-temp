@@ -1,5 +1,5 @@
 {
-  virtualisation.oci-containers.containers = {
+  docker-containers = {
     borgmatic = {
       image = "b3vis/borgmatic:v1.1.13-1.5.8";
       volumes = [

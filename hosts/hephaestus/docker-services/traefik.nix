@@ -1,5 +1,5 @@
 {
-  virtualisation.oci-containers.containers = {
+  docker-containers = {
     traefik = {
       image = "traefik:v2.3";
       volumes = [

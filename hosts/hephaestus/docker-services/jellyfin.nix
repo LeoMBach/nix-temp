@@ -1,5 +1,5 @@
 {
-  virtualisation.oci-containers.containers = {
+  docker-containers = {
     jellyfin = {
       image = "linuxserver/jellyfin:10.6.4-1-ls76";
       volumes = [

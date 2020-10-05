@@ -1,9 +1,9 @@
 {
-  virtualisation.oci-containers.containers = {
+  docker-containers = {
     postgres = {
       image = "postgres:12-alpine";
       environment = { POSTGRES_PASSWORD = "postgres"; };
-      extraOptions = [
+      extraDockerOptions = [
         "--network=nextcloud_net"
         "--network=borg_net"
       ];
