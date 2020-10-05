@@ -1,5 +1,5 @@
 {
-  docker-containers = {
+  virtualisation.oci-containers.containers = {
     postgres = {
       image = "postgres:12-alpine";
       environment = { POSTGRES_PASSWORD = "postgres"; };
