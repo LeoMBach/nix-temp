@@ -19,6 +19,7 @@
         "--label=traefik.http.routers.nextcloud.tls.certresolver=letsencrypt"
 
         "--network=traefik_net"
+        "--network=nextcloud_net"
       ];
     };
   };

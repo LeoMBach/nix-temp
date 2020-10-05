@@ -13,7 +13,7 @@
       docker = "${config.virtualisation.docker.package}/bin/docker";
     in ''
       existing_networks=$(${docker} network ls | ${awk} '{ if (NR>1) { print $2 } }' || echo true)
-      networks=("borg_net" "traefik_net")
+      networks=("borg_net" "nextcloud_net" "traefik_net")
       for net in "''${networks[@]}"; do
         if [[ "''${existing_networks[*]}" =~ $net ]]; then
           echo "Docker network \"$net\" already exists."
