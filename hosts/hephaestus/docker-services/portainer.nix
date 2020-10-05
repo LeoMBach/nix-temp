@@ -1,5 +1,5 @@
 {
-  docker-containers = {
+  virtualisation.oci-containers.containers = {
     portainer = {
       image = "portainer/portainer-ce:2.0.0-alpine";
       volumes = [ "/var/run/docker.sock:/var/run/docker.sock" ];

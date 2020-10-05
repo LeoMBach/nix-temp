@@ -1,7 +1,7 @@
 {
-  docker-containers = {
+  virtualisation.oci-containers.containers = {
     heimdall = {
-      image = "linuxserver/heimdall:2.2.2-ls101l";
+      image = "linuxserver/heimdall:2.2.2-ls101";
       volumes = [ "/opt/hephaestus/heimdall:/config" ];
       environment = {
         PUID = "1000";
