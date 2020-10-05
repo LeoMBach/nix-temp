@@ -1,10 +1,9 @@
 {
   imports = [
-    # ./borgmatic.nix
+    ./borgmatic
     ./heimdall.nix
-    # ./jellyfin.nix
+    ./jellyfin.nix
     ./nextcloud.nix
-    # ./plex.nix
     ./portainer.nix
     ./postgres.nix
   ];
