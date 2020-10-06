@@ -10,7 +10,6 @@
     ../../pkgs
     ../../pkgs/plasma5.nix
     ../../virtualisation/docker.nix
-    ../../virtualisation/virtualbox.nix
     ../../modules/vscode-liveshare.nix
     ../../modules/rclone-mount.nix
   ];
@@ -18,7 +17,7 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_5_7;
     kernelModules = [
-      "acpi_call"
+      "acpi-call"
       "kvm-amd"
     ];
 
@@ -141,7 +140,6 @@
     handbrake
     joplin-desktop
     lazygit
-    libvirt
     mediainfo
     nodePackages.npm
     nodejs-13_x
@@ -156,6 +154,7 @@
     signal-desktop
     sshfs
     syncthing-tray
+    virt-manager
     vlc
     vscode
     wireshark
@@ -165,6 +164,7 @@
 
   programs = {
     adb.enable = true;
+    dconf.enable = true;
     java.enable = true;
     usbtop.enable = true;
 
@@ -178,6 +178,8 @@
       extraConfig = builtins.readFile ../../secrets/hermes/ssh-config;
     };
   };
+
+  virtualisation.libvirtd.enable = true;
 
   system.stateVersion = "20.03";
 }
