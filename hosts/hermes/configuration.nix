@@ -90,6 +90,25 @@
 
     openssh.enable = true;
 
+    syncthing = {
+      enable = true;
+      declarative = {
+        cert = "${../../../nixos-config/secrets/hermes/syncthing/cert.pem}";
+        key = "${../../../nixos-config/secrets/hermes/syncthing/key.pem}";
+
+        devices = {
+          circe = {
+            name = "circe";
+            id = "T2SX6WE-VSTHGT6-JUEZNX5-N5ADWQH-MD74SL7-4IVBFPJ-DYQD3KJ-EI66FQZ";
+          };
+          work = {
+            name = "work";
+            id = "6ICA2O5-FF27QPK-VWUI35V-BLTFWWT-POJBADG-X44RVFZ-EOIMQWT-SVT2KQR";
+          };
+        };
+      };
+    };
+
     rclone-mount.mounts.dropbox = {
       configPath = "/home/leo/.config/rclone/rclone.conf";
       remote = "dropbox_cache:";
@@ -126,6 +145,7 @@
     mediainfo
     nodePackages.npm
     nodejs-13_x
+    openssl
     poetry
     postman
     qemu
@@ -135,6 +155,7 @@
     shellcheck
     signal-desktop
     sshfs
+    syncthing-tray
     vlc
     vscode
     wireshark
