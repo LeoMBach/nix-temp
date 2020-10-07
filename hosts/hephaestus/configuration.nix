@@ -40,9 +40,7 @@
         isNormalUser = true;
         initialPassword = "letmein";
         extraGroups = [ "docker" "wheel" ];
-        openssh = {
-          authorizedKeys.keyFiles = [ ./keys/hermes.pub ];
-        };
+        openssh.authorizedKeys.keyFiles = [ ./keys/hermes.pub ];
       };
     };
   };
