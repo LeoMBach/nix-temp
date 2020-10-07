@@ -30,14 +30,13 @@
   users = {
     mutableUsers = true;
     users = {
-      hephaestus = {
+      heph = {
         uid = 1000;
         shell = pkgs.zsh;
-        home = "/home/hephaestus";
+        home = "/home/heph";
         isNormalUser = true;
         initialPassword = "letmein";
         extraGroups = [ "docker" "wheel" ];
-
         openssh = {
           authorizedKeys.keyFiles = [ ./keys/hermes.pub ];
         };
