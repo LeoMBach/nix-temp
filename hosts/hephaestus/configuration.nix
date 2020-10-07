@@ -7,9 +7,7 @@
     ./docker-network-init.nix
     ../../modules/rclone-mount.nix
     ../../nix
-    ../../pkgs/vim.nix
-    ../../pkgs/screen.nix
-    ../../pkgs/tmux.nix
+    ../../pkgs
     ../../virtualisation/docker.nix
   ];
 
