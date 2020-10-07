@@ -4,7 +4,7 @@
   imports = [
     ../../../hardware-configuration.nix
 
-    ../../modules/rclone-mount.nix
+    ./rclone-mounts.nix
     ../../nix
     ../../pkgs
     ../../virtualisation/docker.nix
