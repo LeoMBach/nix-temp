@@ -3,6 +3,14 @@
 {
   systemd.services.docker-init-networks = {
     description = "Create Hephaestus docker networks.";
+    before = [
+      # "docker-borgmatic.target"
+      "docker-heimdall.target"
+      "docker-jellyfin.target"
+      "docker-nextcloud.target"
+      "docker-portainer.target"
+      "docker-traefik.target"
+    ];
     after = [ "network.target" ];
     wantedBy = [ "multi-user.target" ];
 
