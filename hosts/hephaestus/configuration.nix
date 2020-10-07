@@ -20,6 +20,10 @@
     device = "/dev/sda";
   };
 
+  environment.systemPackages = [
+    (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion
+  ];
+
   security.sudo.wheelNeedsPassword = false;
 
   users = {
