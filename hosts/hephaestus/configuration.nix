@@ -20,6 +20,7 @@
     (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion
 
     rclone
+    transcrypt
   ];
 
   security.sudo.wheelNeedsPassword = false;
