@@ -4,8 +4,7 @@
   imports = [
     ../../../hardware-configuration.nix
 
-    ./docker-networks.nix
-    ./docker-services
+    ./docker-network-init.nix
     ../../modules/rclone-mount.nix
     ../../nix
     ../../pkgs/vim.nix
