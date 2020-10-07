@@ -5,9 +5,11 @@
     variables = { EDITOR = "vim"; };
 
     systemPackages = with pkgs; [
+      pkgs.nodejs # Needed for coc-nvim
+
       ((vim_configurable.override { python = python3; }).customize {
         name = "vim";
-        
+
         vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
           coc-nvim
           fzf-vim
@@ -23,7 +25,7 @@
           vim-gitgutter
           vim-surround
         ];
-        
+
         vimrcConfig.customRC = ''
           set encoding=utf-8
 
@@ -73,7 +75,7 @@
           set signcolumn=yes
 
           " Coc tab completion
-          inoremap <silent><expr> <TAB> 
+          inoremap <silent><expr> <TAB>
             \ pumvisible() ? "\<C-n>" :
             \ <SID>check_back_space() ? "\<TAB>" :
             \ coc#refresh()
