@@ -24,6 +24,8 @@
     transcrypt
   ];
 
+  networking.hostName = "hephaestus";
+
   services.openssh.enable = true;
 
   security.sudo.wheelNeedsPassword = false;
