@@ -158,7 +158,9 @@
     chromium
     dbeaver
     dive
+    f3
     ffmpeg
+    figlet
     firefox
     freerdp
     fuse3
