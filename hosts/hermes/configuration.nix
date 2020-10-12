@@ -91,9 +91,34 @@
 
     syncthing = {
       enable = true;
+      group = "users";
       declarative = {
         cert = "${../../../nixos-config/secrets/hermes/syncthing/cert.pem}";
         key = "${../../../nixos-config/secrets/hermes/syncthing/key.pem}";
+
+        folders = {
+          work = {
+            id = "xej33-tlky4";
+            devices = [ "circe" ];
+            label = "work";
+            path = "/var/lib/syncthing/work";
+            versioning = {
+              type = "trashcan";
+              params = { cleanoutDays = "14"; };
+            };
+          };
+
+          jetbrains-config = {
+            id = "kph91-atog7";
+            devices = [ "circe" ];
+            label = "jetbrains-config";
+            path = "/var/lib/syncthing/jetbrains-config";
+            versioning = {
+              type = "trashcan";
+              params = { cleanoutDays = "14"; };
+            };
+          };
+        };
 
         devices = {
           circe = {
