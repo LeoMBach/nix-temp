@@ -53,6 +53,10 @@
           set softtabstop=4
           set expandtab
 
+          set backupdir=/tmp//
+          set directory=/tmp//
+          set undodir=/tmp//
+
           " Default to 2-space tabs for certain filetypes
           autocmd FileType html             :setlocal sw=2 ts=2 sts=2
           autocmd FileType javascript       :setlocal sw=2 ts=2 sts=2
