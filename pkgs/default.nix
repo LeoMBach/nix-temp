@@ -48,6 +48,7 @@
       ripgrep
       rsync
       sshfs
+      transcrypt
       tree
       unzip
       usbutils
