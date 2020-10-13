@@ -176,6 +176,7 @@
     qemu
     rclone
     remmina
+    s-tui
     scrcpy
     shellcheck
     signal-desktop
