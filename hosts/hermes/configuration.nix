@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 
+let
+  oNine = import <nixos-20.09> {};
+in
 {
   imports = [
     ../../../hardware-configuration.nix
@@ -15,7 +18,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_5_7;
+    kernelPackages = oNine.pkgs.linuxPackages_5_8;
     kernelModules = [
       "acpi-call"
       "kvm-amd"
