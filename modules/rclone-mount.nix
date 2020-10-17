@@ -8,7 +8,7 @@ let
   mkRcloneMount = name: cfg:
     nameValuePair "rclone-mount-${name}" {
       description = "rclone mount ${name}";
-      path = with pkgs; [ rclone ];
+      path = [ pkgs.rclone ];
       preStart = "mkdir -p ${cfg.mountPath}";
       serviceConfig = {
         Type = "simple";
@@ -62,6 +62,7 @@ in {
 
   config = mkIf (with config.services.rclone-mount; mounts != {})
     (with config.services.rclone-mount; {
+      environment.systemPackages = [ pkgs.rclone ];
       systemd.services = mapAttrs' mkRcloneMount mounts;
     });
 }
