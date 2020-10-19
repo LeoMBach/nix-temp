@@ -17,8 +17,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    (import (builtins.fetchTarball https://github.com/hercules-ci/arion/tarball/master) {}).arion
-
     figlet
     transcrypt
   ];
