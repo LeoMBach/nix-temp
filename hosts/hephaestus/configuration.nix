@@ -5,6 +5,7 @@
     ../../../hardware-configuration.nix
 
     ./rclone-mounts.nix
+    ./services
     ../../nix
     ../../pkgs
     ../../virtualisation/docker.nix
