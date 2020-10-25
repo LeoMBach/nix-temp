@@ -86,6 +86,8 @@ in
   security.sudo.wheelNeedsPassword = false;
 
   services = {
+    avahi.enable = true;
+
     # Suspend to ram doesn't work on the Yoga Slim 7 without some finangling.
     # This is a simple workaround.
     logind.lidSwitch = "lock";
