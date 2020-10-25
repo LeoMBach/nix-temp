@@ -14,7 +14,6 @@ in
     ../../pkgs/plasma5.nix
     ../../virtualisation/docker.nix
     ../../modules/vscode-liveshare.nix
-    ../../modules/rclone-mount.nix
   ];
 
   boot = {
@@ -136,12 +135,6 @@ in
           };
         };
       };
-    };
-
-    rclone-mount.mounts.dropbox = {
-      configPath = "/home/leo/.config/rclone/rclone.conf";
-      remote = "dropbox_cache:";
-      mountPath = "/mnt/dropbox";
     };
 
     xserver.videoDrivers = [ "amdgpu" ];
