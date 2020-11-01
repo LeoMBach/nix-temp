@@ -1,8 +1,5 @@
 { config, pkgs, lib, ... }:
 
-let
-  oNine = import <nixos-20.09> {};
-in
 {
   imports = [
     ../../../hardware-configuration.nix
@@ -17,7 +14,7 @@ in
   ];
 
   boot = {
-    kernelPackages = oNine.pkgs.linuxPackages_5_8;
+    kernelPackages = pkgs.linuxPackages_5_8;
     kernelModules = [
       "acpi-call"
       "kvm-amd"
@@ -167,7 +164,7 @@ in
     lazygit
     mediainfo
     nodePackages.npm
-    nodejs-13_x
+    nodejs
     openssl
     poetry
     postman
