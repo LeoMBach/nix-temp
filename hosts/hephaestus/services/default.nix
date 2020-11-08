@@ -3,7 +3,9 @@
 {
   imports = [
     ./docker-network-init.nix
+    ./gitea.nix
   ];
+
   services = {
     fail2ban = {
       enable = true;
