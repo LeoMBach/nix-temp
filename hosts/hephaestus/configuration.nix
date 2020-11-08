@@ -22,7 +22,10 @@
     transcrypt
   ];
 
-  networking.hostName = "hephaestus";
+  networking = {
+    hostName = "hephaestus";
+    firewall.allowedTCPPorts = [ 80 443 ];
+  };
 
   services.openssh.enable = true;
 
