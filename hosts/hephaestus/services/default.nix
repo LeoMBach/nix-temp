@@ -9,5 +9,7 @@
       enable = true;
       bantime-increment.maxtime = "48h";
     };
+
+    jellyfin.enable = true;
   };
 }
