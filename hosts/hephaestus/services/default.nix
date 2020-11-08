@@ -4,6 +4,7 @@
   imports = [
     ./docker-network-init.nix
     ./gitea.nix
+    ./nextcloud.nix
   ];
 
   services = {
