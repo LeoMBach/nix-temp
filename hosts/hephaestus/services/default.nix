@@ -5,6 +5,7 @@
     ./docker-network-init.nix
     ./gitea.nix
     ./nextcloud.nix
+    ./nginx.nix
     ./postgresql.nix
   ];
 
