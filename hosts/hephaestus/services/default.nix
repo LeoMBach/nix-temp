@@ -5,6 +5,7 @@
     ./docker-network-init.nix
     ./gitea.nix
     ./nextcloud.nix
+    ./postgresql.nix
   ];
 
   services = {
