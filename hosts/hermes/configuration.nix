@@ -135,6 +135,11 @@
         };
       };
     };
+
+    xserver.displayManager = {
+      autoLogin.user = "leo";
+      defaultSession = "plasma5";
+    };
   };
 
   # Disable the sap plugin, just to get rid of two lines of error text on each bluetoothd restart.
