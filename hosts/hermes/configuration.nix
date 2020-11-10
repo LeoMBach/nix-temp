@@ -20,6 +20,7 @@
       "acpi-call"
       "kvm-amd"
     ];
+    blacklistedKernelModules = [ "sp5100_tco" ];
 
     # Fixes backlight save/load systemd service
     kernelParams = [
