@@ -3,6 +3,7 @@
 {
   imports = [
     ../../../hardware-configuration.nix
+    ../../common/amdgpu.nix
     ../../common/grub-efi.nix
     ../../common/user.nix
     ../../common/laptop.nix
@@ -133,8 +134,6 @@
         };
       };
     };
-
-    xserver.videoDrivers = [ "amdgpu" ];
   };
 
   # Disable the sap plugin, just to get rid of two lines of error text on each bluetoothd restart.
