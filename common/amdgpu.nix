@@ -3,7 +3,10 @@
 # https://nixos.wiki/wiki/AMD_GPU
 
 {
-  boot.kernelModules = [ "amdgpu" ];
+  boot = {
+    blacklistedKernelModules = [ "radeon" ];
+    kernelModules = [ "amdgpu" ];
+  };
 
   hardware.opengl = {
     driSupport = true;
@@ -17,6 +20,6 @@
 
   services.xserver = {
     enable = true;
-    videoDrivers = [ "amdgpu" "radeon" ];
+    videoDrivers = [ "amdgpu" ];
   };
 }
