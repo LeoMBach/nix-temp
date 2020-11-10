@@ -15,7 +15,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_5_8;
+    kernelPackages = pkgs.linuxPackages_5_9;
     kernelModules = [
       "acpi-call"
       "kvm-amd"
