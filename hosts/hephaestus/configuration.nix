@@ -17,10 +17,7 @@
     device = "/dev/sda";
   };
 
-  environment.systemPackages = with pkgs; [
-    figlet
-    transcrypt
-  ];
+  environment.systemPackages = with pkgs; [ figlet transcrypt ];
 
   networking = {
     hostName = "hephaestus";

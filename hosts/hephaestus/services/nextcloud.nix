@@ -1,9 +1,12 @@
 { config, lib, ... }:
 
+let
+  settings = import ../../../secrets/hephaestus/settings.nix;
+in
 {
   services.nextcloud = {
     enable = true;
-    hostName = "cloud.lmgtb.dev";
+    hostName = settings.nextcloudDomain;
     https = true;
     autoUpdateApps.enable = true;
     config = {
