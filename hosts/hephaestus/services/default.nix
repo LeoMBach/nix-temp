@@ -3,6 +3,7 @@
 {
   imports = [
     ./docker-network-init.nix
+    ./borg.nix
     ./gitea.nix
     ./nextcloud.nix
     ./nginx.nix
