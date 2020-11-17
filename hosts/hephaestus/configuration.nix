@@ -1,5 +1,8 @@
 { config, pkgs, lib, ... }:
 
+let
+  settings = import ../../secrets/hephaestus/settings.nix;
+in
 {
   imports = [
     ../../../hardware-configuration.nix
@@ -26,7 +29,15 @@
 
   services.openssh.enable = true;
 
-  security.sudo.wheelNeedsPassword = false;
+  security = {
+    sudo.wheelNeedsPassword = false;
+    acme = {
+      acceptTerms = true;
+      certs = {
+        "${settings.domain}".email = "${settings.acmeEmail}";
+      };
+    };
+  };
 
   programs.zsh.loginShellInit = "figlet Hephaestus";
 
