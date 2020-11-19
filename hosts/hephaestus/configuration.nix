@@ -33,8 +33,10 @@ in
     sudo.wheelNeedsPassword = false;
     acme = {
       acceptTerms = true;
-      certs = {
-        "${settings.domain}".email = "${settings.acmeEmail}";
+      email = "${settings.acmeEmail}";
+      certs."${settings.domain}" = {
+        domain = "${settings.domain}";
+        extraDomainNames = [ "*.${settings.domain}" ];
       };
     };
   };

@@ -14,15 +14,21 @@ in
 
     virtualHosts = {
       "${settings.gitDomain}" = {
-        locations."/" = { proxyPass = "https://127.0.0.1:3000"; };
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = { proxyPass = "http://127.0.0.1:3000"; };
       };
 
       "${settings.mediaDomain}" = {
-        locations."/" = { proxyPass = "https://127.0.0.1:8920"; };
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = { proxyPass = "http://127.0.0.1:8096"; };
       };
 
       "${settings.nextcloudDomain}" = {
-        locations."/" = { proxyPass = "https://127.0.0.1:443"; };
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = { proxyPass = "http://127.0.0.1:443"; };
       };
     };
   };
