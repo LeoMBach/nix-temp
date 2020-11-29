@@ -3,6 +3,7 @@
 {
   imports = [
     ../../../hardware-configuration.nix
+
     ../../common/amdgpu.nix
     ../../common/grub-efi.nix
     ../../common/user.nix
@@ -10,6 +11,7 @@
     ../../nix
     ../../pkgs
     ../../pkgs/plasma5.nix
+    ../../pkgs/unstable.nix
     ../../virtualisation/docker.nix
     ../../modules/vscode-liveshare.nix
   ];
