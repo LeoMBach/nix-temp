@@ -50,6 +50,7 @@
       sshfs
       transcrypt
       tree
+      unrar
       unzip
       usbutils
       wget
