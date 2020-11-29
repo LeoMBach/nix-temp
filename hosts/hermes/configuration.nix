@@ -167,7 +167,6 @@
     freerdp
     fuse3
     handbrake
-    joplin-desktop
     lazygit
     mediainfo
     nodePackages.npm
@@ -184,6 +183,7 @@
     signal-desktop
     sshfs
     syncthing-tray
+    unstable.joplin-desktop
     virt-manager
     vlc
     vscode
