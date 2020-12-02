@@ -33,11 +33,12 @@ in
     sudo.wheelNeedsPassword = false;
     acme = {
       acceptTerms = true;
-      email = "${settings.acmeEmail}";
       certs."${settings.domain}" = {
         domain = "${settings.domain}";
         extraDomainNames = [ "*.${settings.domain}" ];
       };
+      email = "${settings.acmeEmail}";
+      # server = "https://acme-staging-v02.api.letsencrypt.org/directory";
     };
   };
 
