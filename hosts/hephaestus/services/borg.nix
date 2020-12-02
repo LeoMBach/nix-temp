@@ -10,14 +10,15 @@ in
         "/var/lib/gitea"
         "/var/lib/jellyfin"
         "/var/lib/nextcloud"
-        "/var/lib/postgresql/${config.services.postgresql.package.psqlSchema}"
+        "/var/backup/postgresql"
       ];
 
       repo = "/tmp/borg-repo";
       doInit = true;
       extraCreateArgs = "--stats";
 
-      startAt = "daily";
+      # TODO: Would be better to wait for postgresqlBackup completion
+      startAt = "*-*-* 03:00:00";
       prune.keep = {
         daily = 7;
         weekly = 4;

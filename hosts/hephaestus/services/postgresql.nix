@@ -22,7 +22,7 @@
 
     postgresqlBackup = {
       enable = true;
-      startAt = "*-*-* 03:00:00";
+      startAt = "*-*-* 02:00:00";
     };
   };
 }
