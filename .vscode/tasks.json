@@ -1,0 +1,29 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "build-vm",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/build-vm.sh",
+      "args": [
+        "${workspaceFolder}/hosts/hephaestus/configuration.nix",
+        "nixos.qcow2",
+        "20G"
+      ],
+      "problemMatcher": []
+    },
+    {
+      "label": "run-vm",
+      "type": "shell",
+      "command": "${workspaceFolder}/scripts/run-vm.sh",
+      "args": [
+        "4096",
+        "4"
+      ],
+      "dependsOn": [
+        "build-vm"
+      ],
+      "problemMatcher": []
+    }
+  ]
+}
