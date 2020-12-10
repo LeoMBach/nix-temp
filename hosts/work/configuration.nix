@@ -7,8 +7,9 @@
     ./pkgs/idea-ultimate.nix
 
     ../../common/grub-efi.nix
-    ../../common/user.nix
     ../../common/laptop.nix
+    ../../common/ssd.nix
+    ../../common/user.nix
     ../../nix
     ../../pkgs
     ../../pkgs/plasma5.nix
