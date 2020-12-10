@@ -53,6 +53,8 @@
     cpu.intel.updateMicrocode = true;
     enableRedistributableFirmware = true;
 
+    opengl.extraPackages = [ pkgs.vaapiIntel ];
+
     pulseaudio = {
       enable = true;
       package = pkgs.pulseaudioFull;
@@ -129,9 +131,12 @@
     youtube-dl
   ];
 
-  services.xserver.displayManager = {
-    autoLogin.user = "leo";
-    defaultSession = "plasma5";
+  services.xserver = {
+    displayManager = {
+      autoLogin.user = "leo";
+      defaultSession = "plasma5";
+    };
+    videoDrivers = [ "intel" ];
   };
 
   programs = {
