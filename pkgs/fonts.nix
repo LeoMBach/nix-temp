@@ -2,6 +2,7 @@
 
 {
   fonts.fonts = with pkgs; [
+    corefonts
     (nerdfonts.override {
       fonts = [
         "DroidSansMono"
