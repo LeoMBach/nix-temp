@@ -144,20 +144,24 @@
   programs = {
     adb.enable = true;
     dconf.enable = true;
-    java.enable = true;
-    usbtop.enable = true;
 
     gnupg.agent = {
       enable = true;
       pinentryFlavor = "curses";
     };
 
+    java = {
+      enable = true;
+      package = pkgs.jdk14;
+    };
+
     ssh = {
       startAgent = true;
       extraConfig = builtins.readFile ../../secrets/work/ssh/config;
     };
+
+    usbtop.enable = true;
   };
 
   system.stateVersion = "20.09";
 }
-
