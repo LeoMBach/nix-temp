@@ -92,12 +92,14 @@
     cloudfoundry-cli
     dbeaver
     dive
+    eclipses.eclipse-java
     firefox
     freerdp
     fuse3
     fzf
     gimp
     gitAndTools.gitflow
+    glib-networking # Needed by Eclipse Liberty Tools plugin
     gradle
     home-manager
     inkscape
