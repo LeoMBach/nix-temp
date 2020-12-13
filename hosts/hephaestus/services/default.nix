@@ -12,7 +12,9 @@
   services = {
     fail2ban = {
       enable = true;
-      bantime-increment.maxtime = "48h";
+        enable = true;
+        maxtime = "72h";
+      };
     };
 
     jellyfin.enable = true;
