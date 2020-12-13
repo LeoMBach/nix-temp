@@ -27,7 +27,12 @@ in
     firewall.allowedTCPPorts = [ 80 443 ];
   };
 
-  services.openssh.enable = true;
+  services.openssh = {
+    enable = true;
+    passwordAuthentication = false;
+    permitRootLogin = false;
+    authorizedKeysFiles = [ ./keys/hermes.pub ];
+  };
 
   security = {
     sudo.wheelNeedsPassword = false;
@@ -54,7 +59,6 @@ in
         isNormalUser = true;
         initialPassword = "letmein";
         extraGroups = [ "docker" "wheel" ];
-        openssh.authorizedKeys.keyFiles = [ ./keys/hermes.pub ];
       };
     };
   };
