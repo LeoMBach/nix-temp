@@ -7,7 +7,6 @@ in
   imports = [
     ../../../hardware-configuration.nix
 
-    ./rclone-mounts.nix
     ./services
     ../../nix
     ../../pkgs
