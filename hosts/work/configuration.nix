@@ -92,6 +92,7 @@
     chromium
     cloudfoundry-cli
     dbeaver
+    direnv
     dive
     eclipses.eclipse-java
     firefox
