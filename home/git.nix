@@ -4,7 +4,6 @@
   programs.git = {
     enable = true;
     userName = "Leo M Bach";
-    userEmail = "leo.m.bach@protonmail.com";
 
     ignores = [
       ".DS_Store"
