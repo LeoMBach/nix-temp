@@ -19,7 +19,10 @@
 
   boot = {
     kernelPackages = pkgs.linuxPackages_5_9;
-    kernelParams = [ "i915.enable_fbc=1" ]; # https://wiki.archlinux.org/index.php/intel_graphics#Framebuffer_compression_(enable_fbc)
+    kernelParams = [
+      "i915.enable_fbc=1" # https://wiki.archlinux.org/index.php/intel_graphics#Framebuffer_compression_(enable_fbc)
+      "intel_pstate=disable"
+    ];
     kernelModules = [
       "kvm-amd"
       "kvm-intel"
@@ -85,6 +88,8 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    acpi
+    acpid
     android-studio
     ansible
     ansible-lint
