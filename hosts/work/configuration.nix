@@ -99,6 +99,7 @@
     dbeaver
     direnv
     dive
+    dropbox
     eclipses.eclipse-java
     firefox
     freerdp
@@ -114,16 +115,19 @@
     lazygit
     libreoffice
     liquibase
+    lm_sensors
     maven
     meld
     networkmanager-openconnect
     nodePackages.npm
     nodejs
     openconnect
+    poetry
     postman
     qemu
     rclone
     remmina
+    s-tui
     scrcpy
     shellcheck
     signal-desktop
