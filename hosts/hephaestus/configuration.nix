@@ -29,7 +29,7 @@ in
   services.openssh = {
     enable = true;
     passwordAuthentication = false;
-    permitRootLogin = false;
+    # permitRootLogin = "no";
   };
 
   security = {
