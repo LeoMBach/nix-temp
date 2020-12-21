@@ -11,6 +11,8 @@
 
   programs.vim.defaultEditor = true;
 
+  nixpkgs.config.allowUnfree = true;
+
   environment = {
     shellAliases = {
       ll = "ls -l";
