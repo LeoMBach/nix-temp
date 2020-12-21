@@ -14,21 +14,31 @@ in
 
     virtualHosts = {
       "${settings.gitDomain}" = {
-        enableACME = true;
         forceSSL = true;
+        sslCertificate = /var/lib/acme/lmgtb.dev/fullchain.pem;
+        sslCertificateKey = /var/lib/acme/lmgtb.dev/key.pem;
         locations."/" = { proxyPass = "http://127.0.0.1:3000"; };
       };
 
       "${settings.mediaDomain}" = {
-        enableACME = true;
         forceSSL = true;
+        sslCertificate = /var/lib/acme/lmgtb.dev/fullchain.pem;
+        sslCertificateKey = /var/lib/acme/lmgtb.dev/key.pem;
         locations."/" = { proxyPass = "http://127.0.0.1:8096"; };
       };
 
       "${settings.nextcloudDomain}" = {
-        enableACME = true;
         forceSSL = true;
+        sslCertificate = /var/lib/acme/lmgtb.dev/fullchain.pem;
+        sslCertificateKey = /var/lib/acme/lmgtb.dev/key.pem;
         locations."/" = { proxyPass = "http://127.0.0.1:443"; };
+      };
+
+      "${settings.wikiDomain}" = {
+        forceSSL = true;
+        sslCertificate = /var/lib/acme/lmgtb.dev/fullchain.pem;
+        sslCertificateKey = /var/lib/acme/lmgtb.dev/key.pem;
+        locations."/" = { proxyPass = "http://127.0.0.1:8080"; };
       };
     };
   };

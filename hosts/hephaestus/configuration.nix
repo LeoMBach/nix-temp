@@ -37,8 +37,9 @@ in
     acme = {
       acceptTerms = true;
       certs."${settings.domain}" = {
-        domain = "${settings.domain}";
-        extraDomainNames = [ "*.${settings.domain}" ];
+        domain = "*.${settings.domain}";
+        dnsProvider = "cloudflare";
+        credentialsFile = ../../secrets/hephaestus/cloudflare.env;
       };
       email = "${settings.acmeEmail}";
       server = "https://acme-staging-v02.api.letsencrypt.org/directory";
