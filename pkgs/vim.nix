@@ -9,18 +9,34 @@
         name = "vim";
         
         vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
+          #coc-css
+          #coc-emmet
+          #coc-eslint
+          #coc-html
+          #coc-json
+          #coc-prettier
+          #coc-tsserver
+          #coc-yank
+          #emmet-vim
+
           coc-nvim
+          coc-python
           fzf-vim
           fzfWrapper
           gruvbox
           nerdtree
-          nerdtree-git-plugin
+
+          # Disabled until a workaround/update is found for:
+          # https://github.com/Xuyuanp/nerdtree-git-plugin/issues/141
+          # nerdtree-git-plugin
+
           syntastic
           vim-airline
           vim-commentary
           vim-devicons
           vim-fugitive
           vim-gitgutter
+          vim-nix
           vim-surround
         ];
         
@@ -91,6 +107,15 @@
             inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
           endif
 
+          " GoTo code navigation.
+          nnoremap <silent> gd <Plug>(coc-definition)
+          nnoremap <silent> gy <Plug>(coc-type-definition)
+          nnoremap <silent> gi <Plug>(coc-implementation)
+          nnoremap <silent> gr <Plug>(coc-references)
+
+          " Use <c-space> to trigger completion
+          inoremap <silent><expr> <c-@> coc#refresh()
+
           " Project-wide file search
           nnoremap <Leader>p :FZF<CR>
 
@@ -108,7 +133,7 @@
           " Auto-close Vim if NERDTree is the last open buffer
           autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
-          map <C-b> :NERDTreeToggle<CR>
+          map <Leader>b :NERDTreeToggle<CR>
 
           autocmd vimenter * colorscheme gruvbox
           set background=dark
