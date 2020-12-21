@@ -30,7 +30,6 @@ in
     enable = true;
     passwordAuthentication = false;
     permitRootLogin = false;
-    authorizedKeysFiles = [ ./keys/hermes.pub ];
   };
 
   security = {
@@ -58,6 +57,7 @@ in
         isNormalUser = true;
         initialPassword = "letmein";
         extraGroups = [ "docker" "wheel" ];
+        openssh.authorizedKeys.keyFiles = [ ./keys/hermes.pub ];
       };
     };
   };
