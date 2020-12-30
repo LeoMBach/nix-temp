@@ -104,7 +104,6 @@
     chromium
     cloudfoundry-cli
     dbeaver
-    direnv
     dive
     dropbox
     eclipses.eclipse-java

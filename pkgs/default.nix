@@ -30,6 +30,7 @@
       cron
       cryptsetup
       curl
+      direnv
       file
       fzf
       git

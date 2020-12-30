@@ -159,7 +159,6 @@
     bitwarden
     chromium
     dbeaver
-    direnv
     dive
     f3
     ffmpeg
