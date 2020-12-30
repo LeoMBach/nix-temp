@@ -73,6 +73,13 @@
       enp0s31f6.useDHCP = true;
       wlp2s0.useDHCP = true;
     };
+
+    # Needed for Expo & Metro bundler
+    firewall.allowedTCPPorts = [
+      19000
+      19001
+      37446
+    ];
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
