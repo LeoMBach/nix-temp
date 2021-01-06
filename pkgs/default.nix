@@ -24,8 +24,8 @@
     };
 
     systemPackages = with pkgs; [
-      # Basic tools
       aria2
+      bind
       coreutils
       cron
       cryptsetup
@@ -34,6 +34,7 @@
       file
       fzf
       git
+      home-manager
       htop
       input-utils
       less
@@ -56,8 +57,6 @@
       usbutils
       wget
       zip
-
-      home-manager
     ];
   };
 }
