@@ -150,12 +150,41 @@
     youtube-dl
   ];
 
-  services.xserver = {
-    displayManager = {
-      autoLogin.user = "leo";
-      defaultSession = "plasma5";
+  systemd.timers.borgbackup-job-work.timerConfig.Persistent = true;
+
+  services = {
+    borgbackup.jobs.work = {
+      paths = "/home/leo/Code/work";
+      repo = "/mnt/hdd/.borg/work";
+      user = "leo";
+
+      encryption.mode = "repokey-blake2";
+      encryption.passCommand = "cat /etc/nixos/nixos-config/secrets/work/borg/work-pass";
+
+      compression = "auto,zstd,19";
+      startAt = "daily";
+      prune.keep = {
+        within = "1d";
+        daily = 7;
+        weekly = 4;
+        monthly = 6;
+        yearly = 1;
+      };
+
+      exclude = [
+        "*.class"
+        "__pycache__/*"
+        "node_modules/*"
+      ];
     };
-    videoDrivers = [ "intel" ];
+
+    xserver = {
+      displayManager = {
+        autoLogin.user = "leo";
+        defaultSession = "plasma5";
+      };
+      videoDrivers = [ "intel" ];
+    };
   };
 
   programs = {
