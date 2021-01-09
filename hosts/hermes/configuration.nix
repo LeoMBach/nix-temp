@@ -160,6 +160,7 @@
     chromium
     dbeaver
     dive
+    etcher
     f3
     ffmpeg
     figlet
@@ -174,6 +175,7 @@
     openssl
     poetry
     postman
+    qdirstat
     qemu
     rclone
     remmina
