@@ -9,18 +9,12 @@
         name = "vim";
         
         vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
-          #coc-css
-          #coc-emmet
-          #coc-eslint
-          #coc-html
-          #coc-json
-          #coc-prettier
-          #coc-tsserver
-          #coc-yank
-          #emmet-vim
-
+          coc-eslint
+          coc-json
           coc-nvim
+          coc-prettier
           coc-python
+          coc-yank
           fzf-vim
           fzfWrapper
           gruvbox
@@ -36,6 +30,7 @@
           vim-devicons
           vim-fugitive
           vim-gitgutter
+          vim-jsx-typescript
           vim-nix
           vim-surround
         ];
@@ -106,6 +101,9 @@
           else
             inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
           endif
+
+          " List stored yanks in coc-yank buffer
+          nnoremap <silent> <Leader>y :<C-u>CocList -A --normal yank<cr>
 
           " GoTo code navigation.
           nnoremap <silent> gd <Plug>(coc-definition)
