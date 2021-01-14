@@ -20,6 +20,7 @@
     kernelPackages = pkgs.linuxPackages_5_9;
     kernelModules = [
       "acpi-call"
+      "amdgpu"
       "kvm-amd"
     ];
     blacklistedKernelModules = [ "sp5100_tco" ];
@@ -138,9 +139,13 @@
       };
     };
 
-    xserver.displayManager = {
-      autoLogin.user = "leo";
-      defaultSession = "plasma5";
+    xserver = {
+      enable = true;
+      displayManager = {
+        autoLogin.user = "leo";
+        defaultSession = "plasma5";
+      };
+      videoDrivers = [ "amdgpu" ];
     };
   };
 
