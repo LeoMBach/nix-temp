@@ -36,7 +36,7 @@
         core = {
           compression = 9;
           editor = "vim";
-          pager = "less";
+          pager = "less -F -X";
           whitespace = "trailing-space,space-before-tab";
         };
 
