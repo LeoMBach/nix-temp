@@ -178,8 +178,11 @@
     nodePackages.npm
     nodejs
     openssl
-    poetry
     postman
+    python38Packages.pip
+    python38Packages.poetry
+    python38Packages.pylint
+    python38Packages.wheel
     qdirstat
     qemu
     rclone
