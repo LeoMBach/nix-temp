@@ -14,6 +14,8 @@
     ../../pkgs/unstable.nix
     ../../virtualisation/docker.nix
     ../../modules/vscode-liveshare.nix
+
+    ./touchpad-fix-service.nix
   ];
 
   boot = {
