@@ -3,6 +3,7 @@
 {
   imports = [
     ./borg.nix
+    ./dokuwiki.nix
     ./gitea.nix
     ./nextcloud.nix
     ./nginx.nix
