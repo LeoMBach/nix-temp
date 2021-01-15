@@ -13,32 +13,32 @@ in
     recommendedTlsSettings = true;
 
     virtualHosts = {
-      "${settings.gitDomain}" = {
+      "${settings.git.domain}" = {
         forceSSL = true;
         sslCertificate = /var/lib/acme/lmgtb.dev/fullchain.pem;
         sslCertificateKey = /var/lib/acme/lmgtb.dev/key.pem;
         locations."/" = { proxyPass = "http://127.0.0.1:3000"; };
       };
 
-      "${settings.mediaDomain}" = {
+      "${settings.media.domain}" = {
         forceSSL = true;
         sslCertificate = /var/lib/acme/lmgtb.dev/fullchain.pem;
         sslCertificateKey = /var/lib/acme/lmgtb.dev/key.pem;
         locations."/" = { proxyPass = "http://127.0.0.1:8096"; };
       };
 
-      "${settings.nextcloudDomain}" = {
+      "${settings.nextcloud.domain}" = {
         forceSSL = true;
         sslCertificate = /var/lib/acme/lmgtb.dev/fullchain.pem;
         sslCertificateKey = /var/lib/acme/lmgtb.dev/key.pem;
         locations."/" = { proxyPass = "http://127.0.0.1:443"; };
       };
 
-      "${settings.wikiDomain}" = {
+      "${settings.wiki.domain}" = {
         forceSSL = true;
         sslCertificate = /var/lib/acme/lmgtb.dev/fullchain.pem;
         sslCertificateKey = /var/lib/acme/lmgtb.dev/key.pem;
-        locations."/" = { proxyPass = "http://127.0.0.1:8080"; };
+        locations."/" = { proxyPass = "http://127.0.0.1:4444"; };
       };
     };
   };

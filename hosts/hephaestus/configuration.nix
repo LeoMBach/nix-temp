@@ -41,7 +41,7 @@ in
         dnsProvider = "cloudflare";
         credentialsFile = ../../secrets/hephaestus/cloudflare.env;
       };
-      email = "${settings.acmeEmail}";
+      email = "${settings.acme.email}";
       server = "https://acme-staging-v02.api.letsencrypt.org/directory";
     };
   };

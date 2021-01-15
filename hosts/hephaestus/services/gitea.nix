@@ -6,8 +6,8 @@ in
 {
   services.gitea = {
     enable = true;
-    domain = settings.gitDomain;
-    rootUrl = "https://${settings.gitDomain}:3000";
+    domain = settings.git.domain;
+    rootUrl = "https://${settings.git.domain}:${settings.git.port}";
     database = {
       type = "postgres";
       port = "5432";
