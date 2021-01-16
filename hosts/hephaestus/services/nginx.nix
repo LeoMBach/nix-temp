@@ -16,7 +16,7 @@ in
       "${settings.git.domain}" = {
         enableACME = true;
         forceSSL = true;
-        locations."/" = { proxyPass = "http://127.0.0.1:3000"; };
+        locations."/" = { proxyPass = "http://127.0.0.1:${settings.git.port}"; };
       };
 
       "${settings.media.domain}" = {
@@ -34,7 +34,7 @@ in
       "${settings.wiki.domain}" = {
         enableACME = true;
         forceSSL = true;
-        locations."/" = { proxyPass = "http://127.0.0.1:4444"; };
+        locations."/" = { proxyPass = "http://127.0.0.1:${settings.wiki.port}"; };
       };
     };
   };
