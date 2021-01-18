@@ -22,7 +22,7 @@ let
             --cache-db-path=/tmp/rclone/db \
             --cache-dir=/tmp/rclone/vfs \
             --vfs-cache-mode=full \
-            --stats=0 \
+            --stats=60s \
             ${cfg.remote} ${cfg.mountPath}
         ''];
         ExecStop = "/run/wrappers/bin/fusermount -u ${cfg.mountPath}";
@@ -40,7 +40,7 @@ in {
         options = {
           remote = mkOption {
             type = types.str;
-            description = "Remote name.";
+            description = "Name of the remote to mount.";
             example = "dropbox:";
           };
 
