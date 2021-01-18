@@ -8,6 +8,7 @@
     ./nextcloud.nix
     ./nginx.nix
     ./postgresql.nix
+    ./rclone.nix
   ];
 
   services = {
