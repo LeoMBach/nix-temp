@@ -1,5 +1,8 @@
 { config, lib, ... }:
 
+let
+  settings = import ../../../secrets/hephaestus/settings.nix;
+in
 {
   services.dokuwiki.personal = {
     enable = true;
@@ -15,7 +18,7 @@
     nginx.listen = [
       {
         addr = "127.0.0.1";
-        port = 4444;
+        port = settings.wiki.port;
       }
     ];
 
