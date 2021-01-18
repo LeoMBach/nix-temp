@@ -1,0 +1,23 @@
+{ config, pkgs, lib, ... }:
+
+{
+  services.syncthing = {
+    enable = true;
+    group = "users";
+    declarative = {
+      #cert = "${../../../secrets/hephaestus/syncthing/cert.pem}";
+      #key = "${../../../secrets/hephaestus/syncthing/key.pem}";
+
+      devices = {
+        hermes = {
+          name = "hermes";
+          id = "2TZKSIR-WEJ6S36-GCFXZSX-Z6KSCRB-CNQUVOG-XUBEMV6-VEURJV4-DYPWLAU";
+        };
+        work = {
+          name = "work";
+          id = "6ICA2O5-FF27QPK-VWUI35V-BLTFWWT-POJBADG-X44RVFZ-EOIMQWT-SVT2KQR";
+        };
+      };
+    };
+  };
+}
