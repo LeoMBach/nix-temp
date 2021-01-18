@@ -51,10 +51,10 @@ in
   users = {
     mutableUsers = true;
     users = {
-      heph = {
+      leo = {
         uid = 1000;
         shell = pkgs.zsh;
-        home = "/home/heph";
+        home = "/home/leo";
         isNormalUser = true;
         initialPassword = "letmein";
         extraGroups = [ "docker" "wheel" ];
