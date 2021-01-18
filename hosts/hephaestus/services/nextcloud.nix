@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 let
   settings = import ../../../secrets/hephaestus/settings.nix;
@@ -6,7 +6,8 @@ in
 {
   services.nextcloud = {
     enable = true;
-    hostName = settings.nextcloudDomain;
+    package = pkgs.nextcloud20;
+    hostName = settings.nextcloud.domain;
     https = true;
     autoUpdateApps.enable = true;
     config = {
