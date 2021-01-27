@@ -21,7 +21,6 @@ in
       dbhost = "/run/postgresql";
       dbname = "nextcloud";
       dbuser = "nextcloud";
-      dbpass = "nextcloud";
     };
   };
 
