@@ -13,6 +13,9 @@ in
 
     domain = settings.git.domain;
     rootUrl = "https://${settings.git.domain}:${builtins.toString(settings.git.port)}";
+
+    cookieSecure = true;
+
     database = {
       type = "postgres";
       port = "5432";
