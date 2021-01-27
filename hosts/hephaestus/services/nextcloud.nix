@@ -15,6 +15,7 @@ in
     config = {
       adminuser = "admin";
       adminpass = "admin";
+      adminpassFile = "../../../secrets/hephaestus/nextcloud/admin.pass";
 
       dbtype = "pgsql";
       dbhost = "/run/postgresql";
