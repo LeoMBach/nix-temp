@@ -4,10 +4,12 @@
   services = {
     postgresql = {
       enable = true;
+
       ensureDatabases = [
         "gitea"
         "nextcloud"
       ];
+
       ensureUsers = [
         {
           name = "dba";

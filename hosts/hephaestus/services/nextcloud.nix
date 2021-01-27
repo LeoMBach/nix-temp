@@ -7,9 +7,11 @@ in
   services.nextcloud = {
     enable = true;
     package = pkgs.nextcloud20;
+    autoUpdateApps.enable = false;
+
     hostName = settings.nextcloud.domain;
     https = true;
-    autoUpdateApps.enable = true;
+
     config = {
       adminuser = "admin";
       adminpass = "admin";
