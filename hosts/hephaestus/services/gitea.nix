@@ -17,8 +17,16 @@ in
     cookieSecure = true;
 
     database = {
+      name = "gitea";
+      user = "gitea";
       type = "postgres";
       port = "5432";
+      createDatabase = false;
+    };
+
+    dump = {
+      enable = true;
+      interval = "02:00";
     };
   };
 }
