@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  settings = import ../../../secrets/hephaestus/settings.nix;
+  settings = import ../../../secrets/dionysus/settings.nix;
 in
 {
   services.dokuwiki.personal = {
@@ -22,6 +22,6 @@ in
       }
     ];
 
-    usersFile = "/etc/nixos/nixos-config/secrets/hephaestus/dokuwiki/users.auth.php";
+    usersFile = "/etc/nixos/nixos-config/secrets/dionysus/dokuwiki/users.auth.php";
   };
 }

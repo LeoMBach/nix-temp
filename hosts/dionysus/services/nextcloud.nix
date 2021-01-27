@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  settings = import ../../../secrets/hephaestus/settings.nix;
+  settings = import ../../../secrets/dionysus/settings.nix;
 in
 {
   services.nextcloud = {
@@ -15,7 +15,7 @@ in
     config = {
       adminuser = "admin";
       adminpass = "admin";
-      adminpassFile = "../../../secrets/hephaestus/nextcloud/admin.pass";
+      adminpassFile = "../../../secrets/dionysus/nextcloud/admin.pass";
 
       dbtype = "pgsql";
       dbhost = "/run/postgresql";

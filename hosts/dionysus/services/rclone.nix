@@ -6,7 +6,7 @@
 
   services.rclone-mount.mounts.plex = {
     remote = "storage:Plex";
-    configPath = "/etc/nixos/nixos-config/secrets/hephaestus/rclone.config";
+    configPath = "/etc/nixos/nixos-config/secrets/dionysus/rclone.config";
     mountPath = "/mnt/plex";
   };
 }

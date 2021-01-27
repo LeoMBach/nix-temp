@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  settings = import ../../../secrets/hephaestus/settings.nix;
+  settings = import ../../../secrets/dionysus/settings.nix;
 in
 {
   services.borgbackup.jobs = {
@@ -30,7 +30,7 @@ in
 
       encryption = {
         mode = "repokey-blake2";
-        passCommand = "cat ../../../secrets/hephaestus/borg/services-pass.txt";
+        passCommand = "cat ../../../secrets/dionysus/borg/services-pass.txt";
       };
 
     };

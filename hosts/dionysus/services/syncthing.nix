@@ -5,8 +5,8 @@
     enable = true;
     group = "users";
     declarative = {
-      #cert = "${../../../secrets/hephaestus/syncthing/cert.pem}";
-      #key = "${../../../secrets/hephaestus/syncthing/key.pem}";
+      #cert = "${../../../secrets/dionysus/syncthing/cert.pem}";
+      #key = "${../../../secrets/dionysus/syncthing/key.pem}";
 
       devices = {
         hermes = {

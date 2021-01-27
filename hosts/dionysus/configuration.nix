@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  settings = import ../../secrets/hephaestus/settings.nix;
+  settings = import ../../secrets/dionysus/settings.nix;
 in
 {
   imports = [
@@ -22,7 +22,7 @@ in
   environment.systemPackages = with pkgs; [ figlet transcrypt ];
 
   networking = {
-    hostName = "hephaestus";
+    hostName = "dionysus";
     firewall.allowedTCPPorts = [ 80 443 ];
   };
 
@@ -39,7 +39,7 @@ in
       certs."${settings.domain}" = {
         domain = "*.${settings.domain}";
         dnsProvider = "cloudflare";
-        credentialsFile = ../../secrets/hephaestus/cloudflare.env;
+        credentialsFile = ../../secrets/dionysus/cloudflare.env;
       };
       email = "${settings.acme.email}";
       server = "https://acme-staging-v02.api.letsencrypt.org/directory";

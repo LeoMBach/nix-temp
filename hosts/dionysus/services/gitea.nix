@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  settings = import ../../../secrets/hephaestus/settings.nix;
+  settings = import ../../../secrets/dionysus/settings.nix;
 in
 {
   services.gitea = {
