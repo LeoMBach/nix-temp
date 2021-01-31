@@ -11,10 +11,10 @@
     ../../nix
     ../../pkgs
     ../../pkgs/plasma5.nix
-    ../../pkgs/unstable.nix
     ../../virtualisation/docker.nix
     ../../modules/vscode-liveshare.nix
 
+    ./pkgs.nix
     ./touchpad-fix-service.nix
   ];
 
@@ -132,58 +132,6 @@
   systemd.services.bluetooth.serviceConfig.ExecStart = [
     ""
     "/run/current-system/sw/bin/bluetoothd --noplugin=sap"
-  ];
-
-  nixpkgs.config.allowUnfree = true;
-  environment.systemPackages = with pkgs; [
-    acpi
-    ansible
-    ansible-lint
-    bitwarden
-    chromium
-    dbeaver
-    dive
-    dropbox-cli
-    etcher
-    f3
-    ffmpeg
-    figlet
-    firefox
-    freerdp
-    fuse3
-    handbrake
-    hcloud
-    lazygit
-    libguestfs
-    libreoffice
-    mediainfo
-    ncdu
-    nodePackages.node2nix
-    nodePackages.npm
-    nodejs
-    openssl
-    postman
-    python38Packages.pip
-    python38Packages.poetry
-    python38Packages.pylint
-    python38Packages.wheel
-    qdirstat
-    qemu
-    rclone
-    remmina
-    s-tui
-    scrcpy
-    shellcheck
-    signal-desktop
-    sshfs
-    syncthing-tray
-    unstable.joplin-desktop
-    virt-manager
-    vlc
-    vscode
-    wireshark
-    yarn
-    youtube-dl
   ];
 
   programs = {
