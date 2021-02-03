@@ -139,6 +139,7 @@
     signal-desktop
     skype
     soapui
+    speedtest-cli
     sshfs
     sshuttle
     teams
