@@ -108,10 +108,6 @@
         key = "${../../../nixos-config/secrets/hermes/syncthing/key.pem}";
 
         devices = {
-          circe = {
-            name = "circe";
-            id = "T2SX6WE-VSTHGT6-JUEZNX5-N5ADWQH-MD74SL7-4IVBFPJ-DYQD3KJ-EI66FQZ";
-          };
           work = {
             name = "work";
             id = "6ICA2O5-FF27QPK-VWUI35V-BLTFWWT-POJBADG-X44RVFZ-EOIMQWT-SVT2KQR";
