@@ -1,13 +1,7 @@
 { config, lib, pkgs, ... }:
 
 {
-  imports = [
-    ./fonts.nix
-    ./screen.nix
-    ./tmux.nix
-    ./vim.nix
-    ./zsh.nix
-  ];
+  imports = [ ./fonts.nix ./screen.nix ./tmux.nix ./vim.nix ./zsh.nix ];
 
   programs.vim.defaultEditor = true;
 

@@ -1,10 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    zsh-powerlevel10k
-    gitAndTools.gitstatus
-  ];
+  environment.systemPackages = with pkgs; [ zsh-powerlevel10k gitAndTools.gitstatus ];
 
   programs.zsh = {
     enable = true;
@@ -34,14 +31,7 @@
 
     ohMyZsh = {
       enable = true;
-      plugins = [
-        "adb"
-        "docker"
-        "docker-compose"
-        "gitignore"
-        "ripgrep"
-        "yarn"
-      ];
+      plugins = [ "adb" "docker" "docker-compose" "gitignore" "ripgrep" "yarn" ];
     };
   };
 }

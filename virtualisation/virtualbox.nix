@@ -4,10 +4,10 @@
 # So, it has it's own little nix file.
 
 {
-    nixpkgs.config.allowUnfree = true;
-    virtualisation.virtualbox.host = {
-        enable = true;
-        enableExtensionPack = true;
-    };
-    users.extraGroups.vboxusers.members = [ "leo" ];
+  nixpkgs.config.allowUnfree = true;
+  virtualisation.virtualbox.host = {
+    enable = true;
+    enableExtensionPack = true;
+  };
+  users.extraGroups.vboxusers.members = [ "leo" ];
 }
