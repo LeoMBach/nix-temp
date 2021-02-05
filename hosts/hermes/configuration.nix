@@ -27,10 +27,13 @@
     ];
     blacklistedKernelModules = [ "sp5100_tco" ];
 
-    # Fixes backlight save/load systemd service
     kernelParams = [
+      # Fixes backlight save/load systemd service
       "acpi_backlight=native"
       "acpi_enforce_resources=lax"
+
+      # Fixes 'unable to read/write to IOMMU perf counter' error
+      "iommu=soft"
     ];
 
     extraModulePackages = with config.boot.kernelPackages; [
