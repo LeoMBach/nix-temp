@@ -41,6 +41,7 @@
       lsof
       mkpasswd
       nethogs
+      nixfmt
       nmap
       p7zip
       pciutils
