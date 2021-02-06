@@ -37,10 +37,12 @@
       nethogs
       nixfmt
       nmap
+      nwipe
       p7zip
       pciutils
       pigz
       pixz
+      pv
       python38
       ripgrep
       rsync
