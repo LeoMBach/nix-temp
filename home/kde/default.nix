@@ -5,6 +5,13 @@
       target = ".config/kglobalshortcutsrc";
     };
 
+    # Konsole keybindings
+    konsoleuirc = {
+      source = ./konsoleui.rc;
+      target = ".local/share/kxmlgui5/konsole";
+    };
+
+    # KRunner search settings
     krunnerrc = {
       target = ".config/krunnerrc";
       text = ''
