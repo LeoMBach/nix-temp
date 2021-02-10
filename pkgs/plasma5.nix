@@ -15,6 +15,7 @@
     kcalc
     kdeconnect
     ksystemlog
+    ktorrent
     okular
     partition-manager
   ];
