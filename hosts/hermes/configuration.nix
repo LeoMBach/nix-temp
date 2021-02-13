@@ -136,7 +136,10 @@
   programs = {
     adb.enable = true;
     dconf.enable = true;
-    java.enable = true;
+    java = {
+      enable = true;
+      package = pkgs.jdk14;
+    };
     usbtop.enable = true;
 
     gnupg.agent = {
