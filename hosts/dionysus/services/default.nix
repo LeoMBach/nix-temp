@@ -9,6 +9,7 @@
     ./nginx.nix
     ./postgresql.nix
     ./rclone.nix
+    ./syncthing.nix
   ];
 
   services = {
