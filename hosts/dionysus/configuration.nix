@@ -46,7 +46,7 @@ in
     };
   };
 
-  programs.zsh.loginShellInit = "figlet Hephaestus";
+  programs.zsh.loginShellInit = "figlet Dionysus";
 
   users = {
     mutableUsers = true;
