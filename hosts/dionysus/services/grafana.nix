@@ -1,13 +1,13 @@
 { config, lib, ... }:
 
 let
-  settings = import ../../../secrets/dionysus/settings.nix;
+  globalConf = import ../../../secrets/dionysus/global-config.nix;
 in
 {
   services.grafana = {
     enable = true;
-    domain = "${settings.grafanaDomain}";
-    port = settings.grafana.port;
+    domain = "${globalConf.grafanaDomain}";
+    port = globalConf.grafana.port;
 
     database = {
       type = "postgres";

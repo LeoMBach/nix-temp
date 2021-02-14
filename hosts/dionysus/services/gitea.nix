@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  settings = import ../../../secrets/dionysus/settings.nix;
+  globalConf = import ../../../secrets/dionysus/global-config.nix;
 in
 {
   services.gitea = {
@@ -11,8 +11,8 @@ in
     disableRegistration = true;
     useWizard = true;
 
-    domain = settings.git.domain;
-    rootUrl = "https://${settings.git.domain}:${builtins.toString(settings.git.port)}";
+    domain = globalConf.git.domain;
+    rootUrl = "https://${globalConf.git.domain}:${builtins.toString(globalConf.git.port)}";
 
     cookieSecure = true;
 

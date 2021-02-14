@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  settings = import ../../../secrets/dionysus/settings.nix;
+  globalConf = import ../../../secrets/dionysus/global-config.nix;
 in
 {
   services.nginx = {
@@ -13,28 +13,28 @@ in
     recommendedTlsSettings = true;
 
     virtualHosts = {
-      "${settings.git.domain}" = {
+      "${globalConf.git.domain}" = {
         enableACME = true;
         forceSSL = true;
-        locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(settings.git.port)}"; };
+        locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(globalConf.git.port)}"; };
       };
 
-      "${settings.media.domain}" = {
+      "${globalConf.media.domain}" = {
         enableACME = true;
         forceSSL = true;
         locations."/" = { proxyPass = "http://127.0.0.1:8096"; };
       };
 
-      "${settings.nextcloud.domain}" = {
+      "${globalConf.nextcloud.domain}" = {
         enableACME = true;
         forceSSL = true;
         locations."/" = { proxyPass = "http://127.0.0.1:443"; };
       };
 
-      "${settings.wiki.domain}" = {
+      "${globalConf.wiki.domain}" = {
         enableACME = true;
         forceSSL = true;
-        locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(settings.wiki.port)}"; };
+        locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(globalConf.wiki.port)}"; };
       };
     };
   };

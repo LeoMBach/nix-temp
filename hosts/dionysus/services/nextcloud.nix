@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  settings = import ../../../secrets/dionysus/settings.nix;
+  globalConf = import ../../../secrets/dionysus/global-config.nix;
 in
 {
   services.nextcloud = {
@@ -9,7 +9,7 @@ in
     package = pkgs.nextcloud20;
     autoUpdateApps.enable = false;
 
-    hostName = settings.nextcloud.domain;
+    hostName = globalConf.nextcloud.domain;
     https = true;
 
     config = {

@@ -1,7 +1,7 @@
 { config, pkgs, lib, ... }:
 
 let
-  settings = import ../../secrets/dionysus/settings.nix;
+  globalConf = import ../../secrets/dionysus/global-config.nix;
 in
 {
   imports = [
@@ -36,12 +36,12 @@ in
     sudo.wheelNeedsPassword = false;
     acme = {
       acceptTerms = true;
-      certs."${settings.domain}" = {
-        domain = "*.${settings.domain}";
+      certs."${globalConf.domain}" = {
+        domain = "*.${globalConf.domain}";
         dnsProvider = "cloudflare";
         credentialsFile = ../../secrets/dionysus/cloudflare.env;
       };
-      email = "${settings.acme.email}";
+      email = "${globalConf.acme.email}";
       server = "https://acme-staging-v02.api.letsencrypt.org/directory";
     };
   };

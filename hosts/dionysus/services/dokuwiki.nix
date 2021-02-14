@@ -1,7 +1,7 @@
 { config, lib, ... }:
 
 let
-  settings = import ../../../secrets/dionysus/settings.nix;
+  globalConf = import ../../../secrets/dionysus/global-config.nix;
 in
 {
   services.dokuwiki.personal = {
@@ -18,7 +18,7 @@ in
     nginx.listen = [
       {
         addr = "127.0.0.1";
-        port = settings.wiki.port;
+        port = globalConf.wiki.port;
       }
     ];
 
