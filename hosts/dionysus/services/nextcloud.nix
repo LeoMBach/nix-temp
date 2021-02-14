@@ -14,7 +14,6 @@ in
 
     config = {
       adminuser = "admin";
-      adminpass = "admin";
       adminpassFile = "../../../secrets/dionysus/nextcloud/admin.pass";
 
       dbtype = "pgsql";
