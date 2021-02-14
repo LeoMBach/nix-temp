@@ -13,7 +13,7 @@ in
         "/var/backup/postgresql"
       ];
 
-      repo = "/tmp/borg-repo";
+      repo = "/var/backup/borg";
       doInit = true;
       extraCreateArgs = "--stats";
 
