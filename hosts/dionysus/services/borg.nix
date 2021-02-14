@@ -17,8 +17,7 @@ in
       doInit = true;
       extraCreateArgs = "--stats";
 
-      # TODO: Would be better to wait for postgresqlBackup completion
-      startAt = "*-*-* 03:00:00";
+      startAt = "*-*-* 03:00:00"; # Should happen after postgres dump
       prune.keep = {
         daily = 7;
         weekly = 4;
