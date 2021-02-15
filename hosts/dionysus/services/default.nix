@@ -5,8 +5,10 @@
     ./borg.nix
     ./dokuwiki.nix
     ./gitea.nix
+    ./heimdall.nix
     ./nextcloud.nix
     ./nginx.nix
+    ./portainer.nix
     ./postgresql.nix
     ./rclone.nix
     ./syncthing.nix

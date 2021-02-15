@@ -13,6 +13,12 @@ in
     recommendedTlsSettings = true;
 
     virtualHosts = {
+      "${globalConf.dashboard.domain}" = {
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(globalConf.dashboard.port)}"; };
+      };
+
       "${globalConf.git.domain}" = {
         enableACME = true;
         forceSSL = true;
@@ -29,6 +35,12 @@ in
         enableACME = true;
         forceSSL = true;
         locations."/" = { proxyPass = "http://127.0.0.1:443"; };
+      };
+
+      "${globalConf.portainer.domain}" = {
+        enableACME = true;
+        forceSSL = true;
+        locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(globalConf.portainer.port)}"; };
       };
 
       "${globalConf.wiki.domain}" = {
