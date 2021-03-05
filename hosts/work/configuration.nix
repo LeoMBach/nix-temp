@@ -101,6 +101,7 @@
     ansible
     ansible-lint
     ant
+    birdtray
     chromium
     cloudfoundry-cli
     dbeaver
@@ -144,6 +145,7 @@
     sshfs
     sshuttle
     teams
+    thunderbird
     virt-manager
     vlc
     vscode
@@ -180,6 +182,19 @@
       ];
     };
 
+    davmail = {
+      enable = true;
+      url = "https://owa.versoaltima.com/EWS/Exchange.asmx";
+      config.davmail = {
+        popPort = 1110;
+        imapPort = 1143;
+        smtpPort = 1025;
+        caldavPort = 1080;
+        ldapPort = 1389;
+        keepDelay = 30;
+        sentKeepDelay = 90;
+      };
+    };
     xserver = {
       displayManager = {
         autoLogin.user = "leo";
