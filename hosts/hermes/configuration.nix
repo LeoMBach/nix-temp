@@ -12,6 +12,7 @@
     ../../pkgs
     ../../pkgs/plasma5.nix
     ../../virtualisation/docker.nix
+    ../../virtualisation/kvm.nix
     ../../modules/vscode-liveshare.nix
 
     ./pkgs.nix

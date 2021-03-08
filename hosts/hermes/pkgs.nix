@@ -4,7 +4,8 @@ let
   unstable = import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/nixos-unstable") {
     config = config.nixpkgs.config;
   };
-in {
+in
+{
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
     acpi
@@ -39,7 +40,6 @@ in {
     python38Packages.pylint
     python38Packages.wheel
     qdirstat
-    qemu
     rclone
     remmina
     s-tui
@@ -51,7 +51,6 @@ in {
     syncthing-tray
     unstable.joplin-desktop
     unstable.restic
-    virt-manager
     vlc
     vscode
     wireshark
