@@ -2,11 +2,14 @@
 
 let
   pkgs = import (builtins.fetchGit {
-    name = "idea-ultimate-2019.3";
-    url = "https://github.com/nixos/nixpkgs-channels/";
+    name = "idea-ultimate-2020.3";
+    url = "https://github.com/nixos/nixpkgs/";
     ref = "refs/heads/nixpkgs-unstable";
-    rev = "fcc8660d359d2c582b0b148739a72cec476cfef5";
+    rev = "046f8835dcb9082beb75bb471c28c832e1b067b6";
   }) { config.allowUnfree = true; };
 
   intellij = pkgs.jetbrains.idea-ultimate;
-in { environment.systemPackages = [ intellij ]; }
+in
+{
+  environment.systemPackages = [ intellij ];
+}
