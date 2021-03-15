@@ -102,12 +102,14 @@
     ansible-lint
     ant
     birdtray
+    brave
     chromium
     cloudfoundry-cli
     dbeaver
     dive
     dropbox
     eclipses.eclipse-java
+    f3
     firefox
     freerdp
     fuse3
