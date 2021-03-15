@@ -19,11 +19,7 @@
           fzfWrapper
           gruvbox
           nerdtree
-
-          # Disabled until a workaround/update is found for:
-          # https://github.com/Xuyuanp/nerdtree-git-plugin/issues/141
-          # nerdtree-git-plugin
-
+          pear-tree
           syntastic
           vim-airline
           vim-commentary
@@ -33,6 +29,11 @@
           vim-jsx-typescript
           vim-nix
           vim-surround
+          vim-visual-multi
+
+          # Disabled until a workaround/update is found for:
+          # https://github.com/Xuyuanp/nerdtree-git-plugin/issues/141
+          # nerdtree-git-plugin
         ];
         
         vimrcConfig.customRC = ''
