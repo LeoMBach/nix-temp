@@ -46,6 +46,7 @@
       python38
       ripgrep
       rsync
+      smartmontools
       sshfs
       transcrypt
       tree
