@@ -130,6 +130,7 @@
     nodePackages.npm
     nodejs
     openconnect
+    oraclejdk8
     poetry
     postman
     qemu
@@ -215,7 +216,7 @@
 
     java = {
       enable = true;
-      package = pkgs.oraclejdk;
+      package = pkgs.jdk14;
     };
 
     ssh = {
