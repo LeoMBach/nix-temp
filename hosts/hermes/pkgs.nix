@@ -12,6 +12,7 @@ in
     ansible
     ansible-lint
     bitwarden
+    brave
     chromium
     dbeaver
     dive
@@ -28,6 +29,7 @@ in
     lazygit
     libguestfs
     libreoffice
+    lutris
     mediainfo
     ncdu
     nodePackages.node2nix
@@ -48,6 +50,7 @@ in
     signal-desktop
     skype
     sshfs
+    steam
     syncthing-tray
     unstable.joplin-desktop
     unstable.restic
@@ -56,5 +59,6 @@ in
     wireshark
     yarn
     youtube-dl
+    zoom-us
   ];
 }
