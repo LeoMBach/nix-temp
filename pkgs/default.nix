@@ -25,6 +25,7 @@
       cryptsetup
       curl
       direnv
+      dmidecode
       file
       fzf
       git
@@ -47,6 +48,7 @@
       ripgrep
       rsync
       smartmontools
+      speedtest-cli
       sshfs
       transcrypt
       tree
