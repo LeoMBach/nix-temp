@@ -13,9 +13,9 @@ in
   ];
 
   boot.loader.grub = {
-    enable = true;
-    version = 2;
-    device = "/dev/sda";
+   enable = true;
+   version = 2;
+   device = "/dev/sda";
   };
 
   environment.systemPackages = with pkgs; [ figlet transcrypt ];
