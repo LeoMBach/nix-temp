@@ -4,22 +4,30 @@ let
   globalConf = import ../../../secrets/dionysus/global-config.nix;
 in
 {
-  services.nextcloud = {
-    enable = true;
-    package = pkgs.nextcloud20;
-    autoUpdateApps.enable = false;
+  services = {
+    nextcloud = {
+      enable = true;
+      package = pkgs.nextcloud21;
+      autoUpdateApps.enable = false;
 
-    hostName = globalConf.nextcloud.domain;
-    https = true;
+      hostName = globalConf.nextcloud.domain;
+      https = true;
 
-    config = {
-      adminuser = "admin";
-      adminpassFile = "../../../secrets/dionysus/nextcloud/admin.pass";
+      config = {
+        adminuser = "admin";
+        adminpassFile = "../../../secrets/dionysus/nextcloud/admin.pass";
 
-      dbtype = "pgsql";
-      dbhost = "/run/postgresql";
-      dbname = "nextcloud";
-      dbuser = "nextcloud";
+        dbtype = "pgsql";
+        dbhost = "/run/postgresql";
+        dbname = "nextcloud";
+        dbuser = "nextcloud";
+      };
+    };
+
+    nginx.virtualHosts."${globalConf.nextcloud.domain}" = {
+      enableACME = true;
+      forceSSL = true;
+      locations."/" = { proxyPass = "http://127.0.0.1:443"; };
     };
   };
 

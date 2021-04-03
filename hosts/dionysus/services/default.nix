@@ -7,7 +7,6 @@
     ./gitea.nix
     ./heimdall.nix
     ./nextcloud.nix
-    ./nginx.nix
     ./portainer.nix
     ./postgresql.nix
     ./rclone.nix
@@ -24,5 +23,13 @@
     };
 
     jellyfin.enable = true;
+
+    nginx = {
+      enable = true;
+      recommendedGzipSettings = true;
+      recommendedOptimisation = true;
+      recommendedProxySettings = true;
+      recommendedTlsSettings = true;
+    };
   };
 }
