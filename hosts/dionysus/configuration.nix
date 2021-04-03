@@ -5,8 +5,7 @@ let
 in
 {
   imports = [
-    ../../../hardware-configuration.nix
-
+    ./hardware-config.nix
     ./services
     ../../nix
     ../../pkgs

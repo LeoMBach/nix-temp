@@ -1,6 +1,5 @@
 { config, lib, pkgs, ... }:
 
-
 {
   imports = [ ../../../modules/rclone-mount.nix ];
 
