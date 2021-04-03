@@ -47,18 +47,15 @@ in
 
   programs.zsh.loginShellInit = "figlet Dionysus";
 
-  users = {
-    mutableUsers = true;
-    users = {
-      leo = {
-        uid = 1000;
-        shell = pkgs.zsh;
-        home = "/home/leo";
-        isNormalUser = true;
-        initialPassword = "letmein";
-        extraGroups = [ "docker" "wheel" ];
-        openssh.authorizedKeys.keyFiles = [ ./keys/hermes.pub ];
-      };
+  users.users = {
+    leo = {
+      uid = 1000;
+      shell = pkgs.zsh;
+      home = "/home/leo";
+      isNormalUser = true;
+      passwordFile = "${../../secrets/dionysus/leo.pass}";
+      extraGroups = [ "docker" "syncthing" "wheel" ];
+      openssh.authorizedKeys.keyFiles = [ ./keys/hermes.pub ];
     };
   };
 
