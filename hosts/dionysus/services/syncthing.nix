@@ -3,7 +3,6 @@
 {
   services.syncthing = {
     enable = true;
-    group = "users";
     declarative = {
       cert = "${../../../secrets/dionysus/syncthing/cert.pem}";
       key = "${../../../secrets/dionysus/syncthing/key.pem}";
