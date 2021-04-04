@@ -1,5 +1,10 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 
+let
+  unstable = import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/nixos-unstable") {
+    config = config.nixpkgs.config;
+  };
+in
 {
   environment = {
     variables = { EDITOR = "vim"; };
@@ -9,11 +14,13 @@
         name = "vim";
         
         vimrcConfig.plug.plugins = with pkgs.vimPlugins; [
+          coc-css
           coc-eslint
+          coc-html
           coc-json
           coc-nvim
           coc-prettier
-          coc-python
+          coc-yaml
           coc-yank
           fzf-vim
           fzfWrapper
@@ -30,6 +37,9 @@
           vim-nix
           vim-surround
           vim-visual-multi
+
+          unstable.pkgs.vimPlugins.coc-pyright
+          unstable.pkgs.vimPlugins.vim-shellcheck
 
           # Disabled until a workaround/update is found for:
           # https://github.com/Xuyuanp/nerdtree-git-plugin/issues/141
@@ -96,7 +106,7 @@
             return !col || getline('.')[col - 1] =~# '\s'
           endfunction
 
-          " Use <cr> to confirm Coc completion
+          " Use <cr> to confirm coc completion
           if has ("*complete_info")
             inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
           else
