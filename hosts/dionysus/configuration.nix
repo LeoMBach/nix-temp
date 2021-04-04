@@ -25,12 +25,6 @@ in
     firewall.allowedTCPPorts = [ 80 443 ];
   };
 
-  services.openssh = {
-    enable = true;
-    passwordAuthentication = false;
-    permitRootLogin = "no";
-  };
-
   security = {
     sudo.wheelNeedsPassword = false;
     acme = {

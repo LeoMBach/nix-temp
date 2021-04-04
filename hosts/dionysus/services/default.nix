@@ -31,5 +31,11 @@
       recommendedProxySettings = true;
       recommendedTlsSettings = true;
     };
+
+    openssh = {
+      enable = true;
+      passwordAuthentication = false;
+      permitRootLogin = "no";
+    };
   };
 }
