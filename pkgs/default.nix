@@ -28,7 +28,9 @@
       dmidecode
       file
       fzf
+      gcc
       git
+      gnumake
       home-manager
       htop
       input-utils
