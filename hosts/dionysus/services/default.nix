@@ -22,8 +22,6 @@
       };
     };
 
-    jellyfin.enable = true;
-
     nginx = {
       enable = true;
       recommendedGzipSettings = true;
