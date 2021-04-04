@@ -13,7 +13,6 @@ in
     ansible-lint
     bitwarden
     brave
-    chromium
     dbeaver
     dive
     dropbox-cli
@@ -24,6 +23,7 @@ in
     firefox
     freerdp
     fuse3
+    google-chrome
     handbrake
     hcloud
     lazygit
