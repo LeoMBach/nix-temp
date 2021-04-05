@@ -63,6 +63,10 @@
     bluetooth = {
       enable = true;
       powerOnBoot = false;
+      # Enable A2DP profile
+      config = {
+        General = { Enable = "Source,Sink,Media,Socket"; };
+      };
     };
     pulseaudio = {
       enable = true;
