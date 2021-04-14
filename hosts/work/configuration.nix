@@ -23,10 +23,7 @@
       "i915.enable_fbc=1" # https://wiki.archlinux.org/index.php/intel_graphics#Framebuffer_compression_(enable_fbc)
       "intel_pstate=disable"
     ];
-    kernelModules = [
-      "kvm-amd"
-      "kvm-intel"
-    ];
+    kernelModules = [ "kvm-amd" "kvm-intel" ];
 
     loader.grub.enableCryptodisk = true;
 
@@ -40,11 +37,7 @@
       };
 
       # Improve encryption performance
-      availableKernelModules = [
-        "aes_x86_64"
-        "aesni_intel"
-        "cryptd"
-      ];
+      availableKernelModules = [ "aes_x86_64" "aesni_intel" "cryptd" ];
     };
   };
 
@@ -75,11 +68,7 @@
     };
 
     # Needed for Expo & Metro bundler
-    firewall.allowedTCPPorts = [
-      19000
-      19001
-      37446
-    ];
+    firewall.allowedTCPPorts = [ 19000 19001 37446 ];
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
