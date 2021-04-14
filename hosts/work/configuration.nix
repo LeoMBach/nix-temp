@@ -110,7 +110,6 @@
     home-manager
     inkscape
     jd-gui
-    jdk14
     lazygit
     libreoffice
     liquibase
@@ -207,7 +206,7 @@
 
     java = {
       enable = true;
-      package = pkgs.jdk14;
+      package = pkgs.jdk11;
     };
 
     ssh = {
