@@ -145,32 +145,58 @@
     youtube-dl
   ];
 
-  systemd.timers.borgbackup-job-work.timerConfig.Persistent = true;
+  systemd.timers.borgbackup-job-work-local.timerConfig.Persistent = true;
+
+  # TODO: Fails on boot. Maybe add after and wants?
+  systemd.timers.borgbackup-job-work-remote = {
+    requires = [ "network-online.target" ];
+    timerConfig.Persistent = true;
+  };
+  systemd.services.borgbackup-job-work-remote.requires = [ "network-online.target" ];
 
   services = {
-    borgbackup.jobs.work = {
-      paths = "/home/leo/Code/work";
-      repo = "/mnt/hdd/.borg/work";
-      user = "leo";
+    borgbackup.jobs = {
+      work-local = {
+        paths = "/home/leo/Code/work";
+        repo = "/mnt/hdd/.borg/work";
+        user = "leo";
 
-      encryption.mode = "repokey-blake2";
-      encryption.passCommand = "cat /etc/nixos/nixos-config/secrets/work/borg/work-pass";
+        encryption.mode = "repokey-blake2";
+        encryption.passCommand = "cat /etc/nixos/nixos-config/secrets/work/borg/work-pass";
 
-      compression = "auto,zstd,19";
-      startAt = "daily";
-      prune.keep = {
-        within = "1d";
-        daily = 7;
-        weekly = 4;
-        monthly = 6;
-        yearly = 1;
+        compression = "auto,zstd,19";
+        startAt = "daily";
+        prune.keep = {
+          within = "1d";
+          daily = 7;
+          weekly = 4;
+          monthly = 6;
+          yearly = 1;
+        };
+
+        exclude = [ "*.class" "__pycache__/*" "node_modules/*" ];
+        extraCreateArgs = "--stats";
       };
 
-      exclude = [
-        "*.class"
-        "__pycache__/*"
-        "node_modules/*"
-      ];
+      work-remote = {
+        paths = "/home/leo/Code/work";
+        repo = "sb9yr3ig@sb9yr3ig.repo.borgbase.com:repo";
+        user = "leo";
+
+        encryption.mode = "repokey-blake2";
+        encryption.passCommand = "cat /etc/nixos/nixos-config/secrets/work/borg/work-pass";
+
+        compression = "auto,zstd,19";
+        startAt = "daily";
+        prune.keep = {
+          within = "1d";
+          daily = 1;
+          weekly = 4;
+        };
+
+        exclude = [ "*.class" "__pycache__/*" "node_modules/*" ];
+        extraCreateArgs = "--stats";
+      };
     };
 
     davmail = {
