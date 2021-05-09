@@ -139,7 +139,7 @@
     dconf.enable = true;
     java = {
       enable = true;
-      package = pkgs.jdk14;
+      package = pkgs.jdk11;
     };
     usbtop.enable = true;
 
