@@ -20,7 +20,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_5_10;
+    kernelPackages = pkgs.linuxPackages_5_11;
     kernelModules = [
       "acpi-call"
       "amdgpu"
