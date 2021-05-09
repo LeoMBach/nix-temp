@@ -92,13 +92,11 @@
     keyMap = "us";
   };
 
-  time.timeZone = "Europe/Zagreb";
-
   security.sudo.wheelNeedsPassword = false;
 
   services = {
     avahi.enable = true;
-
+    localtime.enable = true;
     openssh.enable = true;
 
     syncthing = {
