@@ -52,6 +52,8 @@ in
     sshfs
     steam
     syncthing-tray
+    unstable.cryptomator
+    unstable.foxitreader
     unstable.joplin-desktop
     unstable.restic
     vlc
