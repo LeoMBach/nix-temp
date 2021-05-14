@@ -83,6 +83,10 @@
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
     networkmanager.enable = true;
     interfaces.wlp1s0.useDHCP = true;
+
+    # Open ports for KDE Connect
+    firewall.allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
+    firewall.allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
@@ -135,10 +139,7 @@
   programs = {
     adb.enable = true;
     dconf.enable = true;
-    java = {
-      enable = true;
-      package = pkgs.jdk11;
-    };
+    java.enable = true;
     usbtop.enable = true;
 
     gnupg.agent = {
