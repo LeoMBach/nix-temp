@@ -10,7 +10,7 @@
     ../../common/laptop.nix
     ../../nix
     ../../pkgs
-    ../../pkgs/plasma5.nix
+    ../../pkgs/cinnamon.nix
     ../../virtualisation/docker.nix
     ../../virtualisation/kvm.nix
     ../../modules/vscode-liveshare.nix
@@ -121,10 +121,7 @@
 
     xserver = {
       enable = true;
-      displayManager = {
-        autoLogin.user = "leo";
-        defaultSession = "plasma5";
-      };
+      displayManager.autoLogin.user = "leo";
       videoDrivers = [ "amdgpu" ];
     };
   };

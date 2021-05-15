@@ -5,6 +5,7 @@
     enable = true;
     layout = "us";
     displayManager.sddm.enable = true;
+    displayManager.defaultSession = "plasma5";
     desktopManager.plasma5.enable = true;
   };
 
