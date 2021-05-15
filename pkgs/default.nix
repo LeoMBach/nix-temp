@@ -52,6 +52,7 @@
       smartmontools
       speedtest-cli
       sshfs
+      sshfs-fuse
       transcrypt
       tree
       unrar

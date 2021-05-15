@@ -10,6 +10,7 @@
 
   environment.systemPackages = with pkgs; with plasma5; with kdeApplications; [
     ark
+    dragon
     gwenview
     kate
     kcalc
