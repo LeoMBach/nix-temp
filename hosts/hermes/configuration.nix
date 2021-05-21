@@ -14,6 +14,7 @@
     ../../virtualisation/docker.nix
     ../../virtualisation/kvm.nix
     ../../modules/vscode-liveshare.nix
+    ../../modules/dns-encrypted.nix
 
     ./pkgs.nix
   ];
@@ -79,7 +80,6 @@
 
   networking = {
     hostName = "hermes";
-    nameservers = [ "1.1.1.1" "1.0.0.1" ];
     networkmanager.enable = true;
     interfaces.wlp1s0.useDHCP = true;
   };
