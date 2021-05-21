@@ -11,5 +11,6 @@
 
   environment.systemPackages = with pkgs; [
     gettext # Needed for installing applets
+    gnome3.gnome-system-monitor
   ];
 }
