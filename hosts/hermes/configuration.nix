@@ -16,7 +16,6 @@
     ../../modules/vscode-liveshare.nix
 
     ./pkgs.nix
-    ./touchpad-fix-service.nix
   ];
 
   boot = {
@@ -83,10 +82,6 @@
     nameservers = [ "1.1.1.1" "1.0.0.1" ];
     networkmanager.enable = true;
     interfaces.wlp1s0.useDHCP = true;
-
-    # Open ports for KDE Connect
-    firewall.allowedTCPPortRanges = [ { from = 1714; to = 1764; } ];
-    firewall.allowedUDPPortRanges = [ { from = 1714; to = 1764; } ];
   };
 
   i18n.defaultLocale = "en_US.UTF-8";
