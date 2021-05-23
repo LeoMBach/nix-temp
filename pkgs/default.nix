@@ -17,6 +17,7 @@
     shellAliases = {
       ll = "ls -l";
       lla = "ls -la";
+      llh = "ls -lh";
       llha = "ls -lha";
 
       grep = "grep --color";
@@ -40,13 +41,12 @@
       less
       lsof
       mkpasswd
-      nethogs
       nmap
       p7zip
       pciutils
       pigz
       pixz
-      python38
+      python39
       ripgrep
       rsync
       sshfs
