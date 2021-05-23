@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 
 {
-  environment.systemPackages = [ pkgs.docker-compose ];
+  environment.systemPackages = with pkgs; [ dive docker-compose ];
   virtualisation.docker = {
       enable = true;
       enableOnBoot = true;
