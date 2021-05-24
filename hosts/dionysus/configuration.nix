@@ -2,6 +2,9 @@
 
 let
   globalConf = import ../../secrets/dionysus/global-config.nix;
+  unstable = import (builtins.fetchTarball "https://github.com/nixos/nixpkgs/tarball/nixos-unstable") {
+    config = config.nixpkgs.config;
+  };
 in
 {
   imports = [
@@ -19,7 +22,11 @@ in
    device = "/dev/sda";
   };
 
-  environment.systemPackages = with pkgs; [ figlet transcrypt ];
+  environment.systemPackages = with pkgs; [
+    unstable.cloudflared # TODO: Setup as service
+    figlet
+    transcrypt
+  ];
 
   networking = {
     hostName = "dionysus";
