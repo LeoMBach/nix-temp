@@ -31,6 +31,7 @@ in
   networking = {
     hostName = "dionysus";
     firewall.allowedTCPPorts = [ 80 443 ];
+    firewall.allowPing = false;
   };
 
   security = {
