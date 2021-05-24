@@ -5,11 +5,12 @@ let
 in
 {
   imports = [
-    ./hardware-config.nix
-    ./services
     ../../nix
     ../../pkgs
     ../../virtualisation/docker.nix
+
+    ./hardware-config.nix
+    ./services
   ];
 
   boot.loader.grub = {
