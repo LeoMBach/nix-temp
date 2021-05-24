@@ -56,7 +56,7 @@ in
       shell = pkgs.zsh;
       home = "/home/leo";
       isNormalUser = true;
-      passwordFile = "${../../secrets/dionysus/leo.pass}";
+      hashedPassword = "$6$3e5n6atu72ozD90q$ko.BxV4plP0.UWQKVVHrknECx1bUGGQtmzZV0hepvtwU2Povv89jM2TPLOjfHbX.Y3BHWWA.MeFtJauHrjWaQ.";
       extraGroups = [ "docker" "syncthing" "wheel" ];
       openssh.authorizedKeys.keyFiles = [ ./keys/hermes.pub ];
     };
