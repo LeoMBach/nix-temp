@@ -38,13 +38,8 @@ in
     sudo.wheelNeedsPassword = false;
     acme = {
       acceptTerms = true;
-      certs."${globalConf.domain}" = {
-        domain = "*.${globalConf.domain}";
-        dnsProvider = "cloudflare";
-        credentialsFile = ../../secrets/dionysus/cloudflare.env;
-      };
       email = "${globalConf.acme.email}";
-      server = "https://acme-staging-v02.api.letsencrypt.org/directory";
+      # server = "https://acme-staging-v02.api.letsencrypt.org/directory";
     };
   };
 

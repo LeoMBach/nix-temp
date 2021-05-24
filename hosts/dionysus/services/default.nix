@@ -2,15 +2,7 @@
 
 {
   imports = [
-    ./borg.nix
-    ./dokuwiki.nix
-    ./gitea.nix
-    ./heimdall.nix
-    ./nextcloud.nix
-    ./portainer.nix
-    ./postgresql.nix
-    ./rclone.nix
-    ./syncthing.nix
+    ./jellyfin.nix
   ];
 
   services = {
