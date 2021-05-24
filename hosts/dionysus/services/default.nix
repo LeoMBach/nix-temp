@@ -2,7 +2,9 @@
 
 {
   imports = [
+    ./grafana.nix
     ./jellyfin.nix
+    ./postgresql.nix
   ];
 
   services = {

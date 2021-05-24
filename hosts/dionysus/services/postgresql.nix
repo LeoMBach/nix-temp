@@ -8,6 +8,7 @@
       ensureDatabases = [
         "gitea"
         "nextcloud"
+        "grafana"
       ];
 
       ensureUsers = [
@@ -16,9 +17,13 @@
           ensurePermissions = { "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES"; };
         }
         {
-          name = "nextcloud";
-          ensurePermissions = { "DATABASE nextcloud" = "ALL PRIVILEGES"; };
+          name = "grafana";
+          ensurePermissions = { "DATABASE grafana" = "ALL PRIVILEGES"; };
         }
+        # {
+        #   name = "nextcloud";
+        #   ensurePermissions = { "DATABASE nextcloud" = "ALL PRIVILEGES"; };
+        # }
       ];
     };
 
