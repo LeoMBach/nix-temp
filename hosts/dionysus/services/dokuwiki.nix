@@ -29,7 +29,7 @@ in
     nginx.virtualHosts."${globalConf.wiki.domain}" = {
       enableACME = true;
       forceSSL = true;
-      locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(globalConf.wiki.port)}"; };
+      locations."/" = { proxyPass = "http://127.0.0.1:${toString globalConf.wiki.port}"; };
     };
   };
 }

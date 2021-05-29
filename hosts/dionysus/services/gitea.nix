@@ -13,7 +13,7 @@ in
       useWizard = true;
 
       domain = globalConf.git.domain;
-      rootUrl = "https://${globalConf.git.domain}:${builtins.toString(globalConf.git.port)}";
+      rootUrl = "https://${globalConf.git.domain}:${toString globalConf.git.port}";
 
       cookieSecure = true;
 
@@ -34,7 +34,7 @@ in
     nginx.virtualHosts."${globalConf.git.domain}" = {
       enableACME = true;
       forceSSL = true;
-      locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(globalConf.git.port)}"; };
+      locations."/" = { proxyPass = "http://127.0.0.1:${toString globalConf.git.port}"; };
     };
   };
 }

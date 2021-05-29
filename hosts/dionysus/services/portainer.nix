@@ -13,6 +13,6 @@ in
   services.nginx.virtualHosts."${globalConf.portainer.domain}" = {
     enableACME = true;
     forceSSL = true;
-    locations."/" = { proxyPass = "http://127.0.0.1:${builtins.toString(globalConf.portainer.port)}"; };
+    locations."/" = { proxyPass = "http://127.0.0.1:${toString globalConf.portainer.port}"; };
   };
 }
