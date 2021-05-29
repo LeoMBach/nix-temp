@@ -13,10 +13,6 @@
 
       ensureUsers = [
         {
-          name = "dba";
-          ensurePermissions = { "ALL TABLES IN SCHEMA public" = "ALL PRIVILEGES"; };
-        }
-        {
           name = "grafana";
           ensurePermissions = { "DATABASE grafana" = "ALL PRIVILEGES"; };
         }
