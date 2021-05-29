@@ -2,7 +2,7 @@
 
 {
   imports = [
-    ./grafana.nix
+    ./grafana
     ./jellyfin.nix
     ./postgresql.nix
   ];
