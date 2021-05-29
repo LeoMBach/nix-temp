@@ -4,6 +4,7 @@
   imports = [
     ./grafana
     ./jellyfin.nix
+    # ./nextcloud.nix
     ./postgresql.nix
   ];
 

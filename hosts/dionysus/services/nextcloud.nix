@@ -1,4 +1,6 @@
-{ config, pkgs, lib, ... }:
+{ config, lib, pkgs, ... }:
+
+with lib;
 
 let
   globalConf = import ../../../secrets/dionysus/global-config.nix;
@@ -15,7 +17,7 @@ in
 
       config = {
         adminuser = "admin";
-        adminpassFile = "../../../secrets/dionysus/nextcloud/admin.pass";
+        adminpass = readFile ../../../secrets/dionysus/nextcloud/admin.pass;
 
         dbtype = "pgsql";
         dbhost = "/run/postgresql";

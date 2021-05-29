@@ -6,9 +6,8 @@
       enable = true;
 
       ensureDatabases = [
-        "gitea"
-        "nextcloud"
         "grafana"
+        # "nextcloud"
       ];
 
       ensureUsers = [
