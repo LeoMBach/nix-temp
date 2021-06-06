@@ -53,7 +53,6 @@
       };
 
       availableKernelModules = [
-        "aes_x86_64"
         "cryptd"
       ];
     };
@@ -64,7 +63,7 @@
       enable = true;
       powerOnBoot = false;
       # Enable A2DP profile
-      config = {
+      settings = {
         General = { Enable = "Source,Sink,Media,Socket"; };
       };
     };
