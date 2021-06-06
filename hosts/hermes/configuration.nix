@@ -36,8 +36,8 @@
       # Fixes 'unable to read/write to IOMMU perf counter' error
       "iommu=soft"
 
-      # Fix 'snd_soc_register_card(acp) failed: -517'
-      "snd_rn_pci_acp3x.dmic_acpi_check=0"
+      # Fix microphone
+      "snd_rn_pci_acp3x.dmic_acpi_check=1"
     ];
 
     extraModulePackages = with config.boot.kernelPackages; [
