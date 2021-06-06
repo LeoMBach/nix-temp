@@ -11,6 +11,7 @@
     ../../nix
     ../../pkgs
     ../../pkgs/cinnamon.nix
+    ../../pkgs/mullvad-vpn.nix
     ../../virtualisation/docker.nix
     ../../virtualisation/kvm.nix
     ../../modules/vscode-liveshare.nix
