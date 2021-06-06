@@ -20,7 +20,7 @@
   ];
 
   boot = {
-    kernelPackages = pkgs.linuxPackages_5_11;
+    kernelPackages = pkgs.linuxPackages_5_12;
     kernelModules = [
       "acpi-call"
       "amdgpu"
@@ -35,6 +35,9 @@
 
       # Fixes 'unable to read/write to IOMMU perf counter' error
       "iommu=soft"
+
+      # Fix 'snd_soc_register_card(acp) failed: -517'
+      "snd_rn_pci_acp3x.dmic_acpi_check=0"
     ];
 
     extraModulePackages = with config.boot.kernelPackages; [
