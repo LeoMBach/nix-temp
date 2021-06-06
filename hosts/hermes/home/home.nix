@@ -1,6 +1,6 @@
 {
   imports = [
-    ../../../home/kde
+    ../../../home/cinnamon
     ../../../home/git.nix
   ];
 

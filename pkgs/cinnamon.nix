@@ -16,7 +16,8 @@
     cinnamon.excludePackages = [];
     systemPackages = with pkgs; [
       gettext # Needed for installing applets
-      gnome3.gnome-system-monitor
+      gnome.file-roller
+      gnome.gnome-system-monitor
       hardinfo
     ];
   };
